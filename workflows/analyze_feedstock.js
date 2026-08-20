@@ -125,14 +125,13 @@ Step 2 — for each failing check, classify it:
   - "all-platforms": failures span multiple platforms including riscv64
   - "pending": check hasn't completed yet
 
-Step 3 — for up to 2 failing linux_riscv64_* checks, fetch the last 80 lines of
-the build log to identify the root cause.
+Step 3 — for up to 2 failing checks, fetch the last 80 lines of the build log.
+Use fetch_ci_log.py which handles both GitHub Actions and Azure Pipelines URLs:
 
-To get a job log:
-  # First find the run ID from the check's targetUrl (it contains /runs/<id>/ or buildId=)
-  # For GitHub Actions URLs (github.com/...actions/runs/<runId>/job/<jobId>):
-  gh api repos/${repo}/actions/jobs/<jobId>/logs 2>&1 | tail -80
-  # For Azure Pipelines URLs: just note the URL, do not try to fetch the log
+  python3 /home/luhenry/git/conda-forge/.bot/fetch_ci_log.py "<targetUrl>" --lines 80
+
+Prioritize fetching logs for linux_riscv64_* failures first.
+If there are no riscv64 failures, fetch the log for the first failing check instead.
 
 Classify the root cause as one of:
   - "missing-dep": solver error, "No candidates were found for <pkg>", package not available for riscv64
