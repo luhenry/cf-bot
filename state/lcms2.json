@@ -1,0 +1,11 @@
+{
+  "feedstock": "lcms2",
+  "best_pr_url": "https://github.com/conda-forge/lcms2-feedstock/pull/35",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_MISSING_DEP",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "The riscv64 CI fails exclusively because libtiff=4.7 is not yet available for linux-riscv64. This is a missing upstream dependency in the conda-forge channel, not a build or code bug in lcms2 itself. All other platforms pass cleanly.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 4
+}

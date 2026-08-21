@@ -1,0 +1,11 @@
+{
+  "feedstock": "tornado",
+  "best_pr_url": "https://github.com/conda-forge/tornado-feedstock/pull/83",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_MISSING_DEP",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All riscv64 CI jobs fail with a solver error: `cross-python_linux-riscv64` does not exist in the channel. This is an infrastructure/missing-dep issue, not a tornado build bug. All other platforms pass cleanly.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 1
+}

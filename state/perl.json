@@ -1,0 +1,11 @@
+{
+  "feedstock": "perl",
+  "best_pr_url": "https://github.com/conda-forge/perl-feedstock/pull/76",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "ESCALATE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "A maintainer (wolfv) has opened a combined draft PR #77 that incorporates the riscv64 changes from this PR alongside a v1/rattler-build recipe conversion. This supersession scenario requires human judgment: should PR #76 be closed in favor of #77, or should #76 be merged first and #77 rebased on top?",
+  "riscv64_ci_passing": true,
+  "num_descendants": 7
+}

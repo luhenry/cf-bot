@@ -1,0 +1,11 @@
+{
+  "feedstock": "msgpack-python",
+  "best_pr_url": "https://github.com/conda-forge/msgpack-python-feedstock/pull/50",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_MISSING_DEP",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All 6 linux_riscv64 CI jobs fail with a conda solver error: \"No candidates were found for cross-python_linux-riscv64 *\". This is a missing upstream dependency, not a bug in msgpack-python. All other platforms pass cleanly.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 3
+}

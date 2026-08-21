@@ -1,0 +1,11 @@
+{
+  "feedstock": "py-rattler",
+  "best_pr_url": "https://github.com/conda-forge/py-rattler-feedstock/pull/98",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_MISSING_DEP",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "The riscv64 CI failures are caused entirely by a solver error: `cross-python_linux-riscv64` has no candidates available. This is a missing dependency in the riscv64 ecosystem, not a bug in the feedstock recipe or build scripts. All non-riscv64 platforms pass successfully.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 3
+}

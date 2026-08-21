@@ -1,0 +1,11 @@
+{
+  "feedstock": "zeromq",
+  "best_pr_url": "https://github.com/conda-forge/zeromq-feedstock/pull/91",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All CI checks pass including linux_riscv64, PR is not a draft, linting is clean, and no prior nudge exists for this feedstock.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 2
+}

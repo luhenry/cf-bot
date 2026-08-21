@@ -1,0 +1,11 @@
+{
+  "feedstock": "spirv-tools",
+  "best_pr_url": "https://github.com/conda-forge/spirv-tools-feedstock/pull/36",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All CI checks pass including linux_riscv64_, PR is not a draft, linter reports excellent condition, and no prior nudge on record.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 4
+}

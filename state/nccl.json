@@ -1,0 +1,11 @@
+{
+  "feedstock": "nccl",
+  "best_pr_url": "https://github.com/conda-forge/nccl-feedstock/pull/162",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_UNRELATED_FAILURE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "riscv64 CI is passing; the only failure is the conda-forge-rerendering-service which failed due to a variant config ambiguity error in the recipe's conda_build_config.yaml (missing zipped keys for compiler versions). This is a pre-existing recipe configuration issue unrelated to the riscv64 migration itself.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 5
+}

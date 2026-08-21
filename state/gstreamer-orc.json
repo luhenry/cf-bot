@@ -1,0 +1,11 @@
+{
+  "feedstock": "gstreamer-orc",
+  "best_pr_url": "https://github.com/conda-forge/gstreamer-orc-feedstock/pull/18",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_MISSING_DEP",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "The linux_riscv64_ CI job fails with a conda solver error for the missing package `chrpath` on linux-riscv64. All other platforms (linux_64, linux_aarch64, linux_ppc64le, win_64, osx_64, osx_arm64) pass. A maintainer comment already notes a dependency on a chrpath-feedstock PR. There is no code or build bug in this feedstock \u2014 the blocker is upstream.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 2
+}

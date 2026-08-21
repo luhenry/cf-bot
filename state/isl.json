@@ -1,0 +1,11 @@
+{
+  "feedstock": "isl",
+  "best_pr_url": "https://github.com/conda-forge/isl-feedstock/pull/35",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All riscv64 CI checks pass. The only failing check (win_64_) is an unrelated Windows build issue (configure exit 77 / conda_build.bat failure) that predates this PR's changes. Linting is clean. No prior nudge has been posted.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 144
+}

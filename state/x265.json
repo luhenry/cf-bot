@@ -1,0 +1,11 @@
+{
+  "feedstock": "x265",
+  "best_pr_url": "https://github.com/conda-forge/x265-feedstock/pull/7",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All CI checks are passing including riscv64, the PR is not a draft, the linter reports the recipe is in excellent condition, and there is no prior nudge on record for this feedstock.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 1
+}

@@ -1,0 +1,11 @@
+{
+  "feedstock": "opencl-headers",
+  "best_pr_url": "https://github.com/conda-forge/opencl-headers-feedstock/pull/9",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All CI checks pass including linux_riscv64_, PR is not a draft, no prior bot nudge recorded (no state file exists), and the PR has been open since 2026-08-05 with no merge yet.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 42
+}

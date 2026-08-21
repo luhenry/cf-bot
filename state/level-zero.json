@@ -1,0 +1,11 @@
+{
+  "feedstock": "level-zero",
+  "best_pr_url": "https://github.com/conda-forge/level-zero-feedstock/pull/98",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All CI checks pass including riscv64, PR is open and not a draft, no prior nudge on record, and the linter reports the recipe is in excellent condition.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 40
+}

@@ -1,0 +1,11 @@
+{
+  "feedstock": "pugixml",
+  "best_pr_url": "https://github.com/conda-forge/pugixml-feedstock/pull/31",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_UNRELATED_FAILURE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "The riscv64 CI passes successfully. The only failing check is the conda-forge-linter, which flags a pre-existing recipe issue (package.version interpreted as float, needs quoting). This is unrelated to the riscv64 migration itself.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 2
+}

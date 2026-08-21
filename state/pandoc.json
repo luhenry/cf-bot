@@ -1,0 +1,11 @@
+{
+  "feedstock": "pandoc",
+  "best_pr_url": "https://github.com/conda-forge/pandoc-feedstock/pull/171",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "ESCALATE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "Maintainer (wolfv) has raised a critical correctness concern: the migration incorrectly maps the linux-amd64 upstream binary archive to the linux-riscv64 platform, which would publish a mislabeled x86-64 package as riscv64. CI passes only because the recipe selects the wrong architecture binary without failing. The maintainer explicitly argues the PR should not be merged until a genuine riscv64 artifact or cross-compiler is available upstream.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 3
+}

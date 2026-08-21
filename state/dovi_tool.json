@@ -1,0 +1,11 @@
+{
+  "feedstock": "dovi_tool",
+  "best_pr_url": "https://github.com/conda-forge/dovi_tool-feedstock/pull/10",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "ESCALATE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "medium",
+  "reason": "All CI including riscv64 is passing, but the rerender has failed multiple times (both bot and conda-forge-admin). Maintainers are actively engaged and explicitly waiting for a separate upstream PR/fix to merge before retrying. Nudging merge while maintainers are in a deliberate holding pattern is not appropriate.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 2
+}

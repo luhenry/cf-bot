@@ -1,0 +1,11 @@
+{
+  "feedstock": "rocm-core",
+  "best_pr_url": "https://github.com/conda-forge/rocm-core-feedstock/pull/19",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_MISSING_DEP",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "riscv64 CI fails solely because cmake-package-check cannot be installed \u2014 it requires python >=3.8 but no python candidates exist for linux-riscv64 yet. This is a transitive missing-dep solver error, not a code bug. Upstream PRs for cmake-feedstock and python-feedstock are being tracked by maintainer luhenry.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 48
+}

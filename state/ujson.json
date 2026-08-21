@@ -1,0 +1,11 @@
+{
+  "feedstock": "ujson",
+  "best_pr_url": "https://github.com/conda-forge/ujson-feedstock/pull/66",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_MISSING_DEP",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All 6 linux_riscv64 CI jobs fail with a solver error indicating cross-python_linux-riscv64 is not yet available in the conda-forge channel. This is an ecosystem-level missing dependency, not a bug in ujson itself.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 1
+}

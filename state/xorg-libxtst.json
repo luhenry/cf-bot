@@ -1,0 +1,11 @@
+{
+  "feedstock": "xorg-libxtst",
+  "best_pr_url": "https://github.com/conda-forge/xorg-libxtst-feedstock/pull/14",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All CI checks pass including linux_riscv64_, PR is open and not a draft, and no nudge has been sent previously (no prior state file).",
+  "riscv64_ci_passing": true,
+  "num_descendants": 2
+}

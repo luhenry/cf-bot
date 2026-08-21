@@ -1,0 +1,11 @@
+{
+  "feedstock": "m4",
+  "best_pr_url": "https://github.com/conda-forge/m4-feedstock/pull/23",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All CI checks pass including linux_riscv64_, the PR is open and not a draft, and the last nudge was on 2026-08-18 which is more than 48 hours ago. No prior bot state exists for this feedstock.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 54
+}

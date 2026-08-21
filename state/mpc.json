@@ -1,0 +1,11 @@
+{
+  "feedstock": "mpc",
+  "best_pr_url": "https://github.com/conda-forge/mpc-feedstock/pull/32",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All CI checks pass including linux_riscv64_, PR is not a draft, linter is clean, and no prior NUDGE_MERGE action exists in the state file.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 144
+}

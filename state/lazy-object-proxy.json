@@ -1,0 +1,11 @@
+{
+  "feedstock": "lazy-object-proxy",
+  "best_pr_url": "https://github.com/conda-forge/lazy-object-proxy-feedstock/pull/49",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_MISSING_DEP",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All six linux_riscv64 CI jobs fail with a dependency solver error: \"No candidates were found for cross-python_linux-riscv64 *.\" This is an infrastructure-level missing package, not a code or recipe bug. All non-riscv64 platforms (linux_64, linux_aarch64, linux_ppc64le, win_64, win_arm64, osx_64, osx_arm64) pass. No action can be taken on the feedstock side until cross-python_linux-riscv64 becomes available in the conda-forge channel.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 1
+}

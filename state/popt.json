@@ -1,0 +1,11 @@
+{
+  "feedstock": "popt",
+  "best_pr_url": "https://github.com/conda-forge/popt-feedstock/pull/15",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_MISSING_DEP",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "The riscv64 CI fails solely due to a conda solver error: \"No candidates were found for libiconv 1.*.\" This is a missing riscv64 dependency in the conda-forge ecosystem, not a build or code bug in popt itself. All other platforms (linux_64, linux_aarch64, linux_ppc64le, win_64, osx_64, osx_arm64) pass successfully.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 32
+}

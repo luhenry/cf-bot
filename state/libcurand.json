@@ -1,0 +1,11 @@
+{
+  "feedstock": "libcurand",
+  "best_pr_url": "https://github.com/conda-forge/libcurand-feedstock/pull/33",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "ESCALATE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "Maintainer explicitly stated RISC-V is not a supported CUDA host platform and applied a \"wontfix\" label. The riscv64 CI fails with a build bug (undefined `target_name` jinja template variable), but the root cause is a fundamental CUDA platform limitation, not a fixable recipe issue. Human judgment is needed to decide whether to close the PR or leave it open pending future CUDA riscv64 support.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 49
+}

@@ -1,0 +1,11 @@
+{
+  "feedstock": "soxr",
+  "best_pr_url": "https://github.com/conda-forge/soxr-feedstock/pull/9",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "NEEDS_FIX",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All platforms fail due to a Jinja2 syntax error in meta.yaml: `{{ stdlib(\"c\") }` has a single closing brace instead of `}}`. This is a build bug introduced by the bot's migration commit that prevents the recipe from rendering on every platform, including riscv64.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 2
+}

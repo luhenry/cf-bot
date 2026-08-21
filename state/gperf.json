@@ -1,0 +1,11 @@
+{
+  "feedstock": "gperf",
+  "best_pr_url": "https://github.com/conda-forge/gperf-feedstock/pull/18",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All CI checks pass including linux_riscv64_, PR is open and not a draft, linter is clean, no prior bot activity on this feedstock.",
+  "riscv64_ci_passing": true,
+  "num_descendants": 54
+}

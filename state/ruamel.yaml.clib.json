@@ -1,0 +1,11 @@
+{
+  "feedstock": "ruamel.yaml.clib",
+  "best_pr_url": "https://github.com/conda-forge/ruamel.yaml.clib-feedstock/pull/41",
+  "last_checked": "2026-08-21T07:30:00Z",
+  "last_action": "WAIT_MISSING_DEP",
+  "last_action_at": "2026-08-21T07:30:00Z",
+  "confidence": "high",
+  "reason": "All six linux_riscv64 CI jobs fail with a dependency solver error: \"No candidates were found for cross-python_linux-riscv64 *.\" This is a missing upstream dependency in the conda-forge channel, not a bug in the feedstock. All other platforms pass. The PR should wait until cross-python_linux-riscv64 becomes available.",
+  "riscv64_ci_passing": false,
+  "num_descendants": 3
+}
