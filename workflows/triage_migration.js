@@ -45,8 +45,10 @@ Each element:
 
 const feedstockList = fetchResult.items
 
+// Timestamp passed in via args (new Date() is banned in workflow scripts)
+const now = args?.now ?? '1970-01-01T00:00:00Z'
+
 // Filter: skip feedstocks checked < 2h ago with no change, unless they need attention
-const now = new Date().toISOString()
 const toAnalyze = feedstockList.filter(f => {
   if (!f.last_checked) return true
   const age = Date.now() - new Date(f.last_checked).getTime()
