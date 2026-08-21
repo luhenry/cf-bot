@@ -74,46 +74,54 @@ for (const f of toAnalyze) {
 
 phase('Summarize')
 
+// Write state files directly in the script (no agent needed, avoids failures)
+for (const r of results) {
+  const rec = r.recommendation ?? {}
+  const state = {
+    feedstock: r.feedstock,
+    best_pr_url: r.best_pr_url,
+    last_checked: now,
+    last_action: rec.action ?? null,
+    last_action_at: now,
+    confidence: rec.confidence ?? null,
+    reason: rec.reason ?? null,
+    riscv64_ci_passing: rec.riscv64_ci_passing ?? null,
+    num_descendants: r.num_descendants,
+  }
+  await agent(`
+Write this JSON to /home/luhenry/git/conda-forge/.bot/state/${r.feedstock}.json (overwrite):
+${JSON.stringify(state, null, 2)}
+Use the Write tool directly.
+`, { label: `write-state:${r.feedstock}`, phase: 'Summarize' })
+}
+
 await agent(`
-Write state files and a summary for this migration triage run.
+Commit all state files and print a summary.
 
-Run timestamp: ${now}
-Feedstocks analyzed: ${results.length}
+Run:
+  git -C /home/luhenry/git/conda-forge/.bot add state/
+  git -C /home/luhenry/git/conda-forge/.bot commit -m "triage ${now.slice(0,16)}: ${results.length} feedstocks" || echo "nothing to commit"
 
-Results:
-${JSON.stringify(results, null, 2)}
-
-For each result:
-1. Write /home/luhenry/git/conda-forge/.bot/state/<feedstock>.json:
-   {
-     "feedstock": "<name>",
-     "best_pr_url": "<url>",
-     "last_checked": "${now}",
-     "last_action": "<result.recommendation.action>",
-     "last_action_at": "${now}",
-     "confidence": "<result.recommendation.confidence>",
-     "reason": "<result.recommendation.reason>",
-     "riscv64_ci_passing": <bool>,
-     "num_descendants": <int>
-   }
-
-2. Commit:
-   git -C /home/luhenry/git/conda-forge/.bot add state/
-   git -C /home/luhenry/git/conda-forge/.bot commit -m "triage ${now.slice(0,16)}: ${results.length} feedstocks"
-
-3. Print summary grouped into sections:
+Then print a summary of these results grouped into sections:
 
 ## Needs attention
-(NUDGE_MERGE, NEEDS_FIX, ESCALATE — sorted by num_descendants desc)
-<name> | <num_descendants> deps | <action> | <reason>
+(action is NUDGE_MERGE, NEEDS_FIX, or ESCALATE — sorted by num_descendants desc)
 
 ## Waiting
-(WAIT_MISSING_DEP, WAIT_UNRELATED_FAILURE)
-<name> | <num_descendants> deps | <action> | <reason>
+(action is WAIT_MISSING_DEP or WAIT_UNRELATED_FAILURE)
 
 ## Skipped
-(SKIP_ALREADY_HANDLED)
-<name> | <action>
-`, { label: 'summarize', phase: 'Summarize' })
+(action is SKIP_ALREADY_HANDLED)
+
+Format each line: <name> | <num_descendants> deps | <action> | <reason>
+
+Results:
+${JSON.stringify(results.map(r => ({
+  feedstock: r.feedstock,
+  num_descendants: r.num_descendants,
+  action: r.recommendation?.action,
+  reason: r.recommendation?.reason,
+})), null, 2)}
+`, { label: 'commit-and-summarize', phase: 'Summarize' })
 
 return results
