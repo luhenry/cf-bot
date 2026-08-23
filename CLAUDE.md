@@ -25,12 +25,15 @@ cf_core/
                                PR-scoring weights, the commit-message attribution guard. Single
                                source of truth for every rule below — CLAUDE.md explains each
                                rule in prose, cf_core/policy.py is what actually enforces it.
-  migration_source.py         fetches the migration JSON and arbitrary repo files at a ref
-                               (raw.githubusercontent.com first, blobless partial-clone +
-                               sparse-checkout fallback if that's blocked).
+  migration_source.py         fetches the migration JSON (raw.githubusercontent.com first,
+                               blobless partial-clone + sparse-checkout fallback if that's
+                               blocked — this repo isn't a feedstock, nothing to fork) — plus
+                               local-clone-reading helpers for feedstocks (see "Verification").
   conda_forge_yml_check.py    the authoritative riscv64-support check (see "Verification" below)
-                               and the git-based PR-diffing helper.
-  gh_client.py                `gh` CLI wrappers (PR list/view/comments, subscribe).
+                               and the git-based PR-diffing helper — both always read from a
+                               local clone, forking+cloning via `gh` first if none exists yet.
+  gh_client.py                `gh` CLI wrappers (PR list/view/comments, subscribe, fork+clone) —
+                               `fork_and_clone` is what conda_forge_yml_check calls into.
   ci_log.py                   CI log tail fetcher (GitHub Actions + Azure Pipelines).
   state_io.py                 validated, additive-merge, atomic read/write for state/*.json and
                                state/_tracked/*.json — see "State files" below.
@@ -91,6 +94,8 @@ Claude will run `workflows/analyze_feedstock.js` for that feedstock and report i
 python3 -m unittest discover -s tests -v
 ```
 
+This never touches the network or `gh` by default. One exception: `tests/test_conda_forge_yml_check.py`'s `TestCheckFeedstockLive` forks+clones real feedstocks (zstd, pandoc) via `gh`, same as the pipeline does — it's skipped unless you explicitly opt in with `CF_BOT_LIVE_FORK_TESTS=1 python3 -m unittest discover -s tests -v`.
+
 ---
 
 ## Workflow architecture
@@ -107,7 +112,13 @@ triage_migration.js          — top-level, runs once per cron tick
   │  └─ analyze_feedstock.js   each feedstock's chain runs independently, no cross-item barrier)
   │       ├─ Verify              relay: cf_core verify feedstock — CUDA-wontfix +
   │       │                      conda-forge.yml checks, zero LLM reasoning, short-circuits
-  │       │                      WONTFIX_PLATFORM / SKIP_ALREADY_HANDLED before any gh call
+  │       │                      WONTFIX_PLATFORM / SKIP_ALREADY_HANDLED before any further gh
+  │       │                      call. This one call ALSO forks+clones the feedstock (if not
+  │       │                      already local -- see "Verification" below) and subscribes to
+  │       │                      every open riscv64-related PR on it, not just a specific PR
+  │       │                      number -- both idempotent/safe on every run, no LLM reasoning.
+  │       │                      (There used to be a separate Setup phase for this; it's gone
+  │       │                      now, folded into this one deterministic call.)
   │       ├─ pr-state             fetch PR metadata + CI checks + changed files (fuzzy)
   │       ├─ comments             fetch PR comments, DISCOVER new shadow-dep mentions (fuzzy)
   │       ├─ ci-analysis          fetch failing CI logs, classify root cause (fuzzy)
@@ -122,8 +133,12 @@ triage_migration.js          — top-level, runs once per cron tick
                                (refuses to commit if it fails) + commit + run summary
 ```
 
-All workflows are **read-only** (Phase 1+2 only). Phase 3 (act) is not automated — see
-"Contributing to a feedstock" below.
+Phase 1+2 never pushes a commit or touches a PR's content — that's still exclusively Phase 3's
+job (below). It's no longer fully side-effect-free, though: Verify above forks/clones feedstocks
+and subscribes to riscv64 PR notifications on every run automatically, so Ludovic gets notified
+of RISC-V-related PR activity without having to run Phase 3's fork step by hand first. Phase 3
+(act — recipe edits, pushes, PR checkout) is still not automated — see "Contributing to a
+feedstock" below.
 
 ## Cron
 
@@ -162,7 +177,7 @@ used by `cf_core.snapshot` to answer "what changed since last run" (newly done, 
 dropped-from-in-PR-without-a-matching-done — usually means merged). Never touches the two
 directories above.
 
-## Actions (Phase 1+2 — read-only)
+## Actions (Phase 1+2 — analysis only, no recipe/PR changes)
 
 Enforced in code: `cf_core/policy.py`'s `ACTION_CODES` (state/*.json) and
 `TRACKED_ACTION_CODES` (state/_tracked/*.json, a superset — adds `DONE`/`WAIT_NOT_STARTED`/
@@ -221,29 +236,82 @@ feedstock <name>`, or `python3 -m cf_core policy check-cuda <name>` for the CUDA
 wired into `cf_core.reconciler` so it runs automatically on every existing shadow-dependency
 entry and every "ready" feedstock — not just when someone happens to ask.
 
-Manual fallback (same technique the CLI uses under the hood, useful for a one-off check outside
-this repo's tooling):
+**Always reads from a local clone — never a disposable `git clone` of the feedstock:**
+
+1. **Reuse the local clone**, if Phase 1 Verify has already run for this feedstock (or a manual
+   Phase-3 fork has) — `conda-forge/<pkg>-feedstock` exists locally. `gh repo fork --clone`
+   sets that clone's `origin` remote to the **fork** (`github.com/luhenry/<pkg>-feedstock`),
+   which is a snapshot from whenever it was forked and does **not** auto-update — reading from
+   `origin` here would silently check a stale copy, not the real, current upstream `main`. `gh`
+   also adds an `upstream` remote pointing at the real `conda-forge/<pkg>-feedstock`, and that's
+   what gets read: one cheap incremental `git fetch upstream main` in the existing clone, then
+   `git show FETCH_HEAD:conda-forge.yml`. No new clone, no tmpdir.
+2. **If there's no local clone yet, create one with `gh repo fork --clone` first** — the exact
+   same command from "Contributing to a feedstock" below, run via `cf_core.gh_client.fork_and_clone`
+   — then read from it as in step 1. This is **not** optional/best-effort: a disposable
+   `git init`/`git clone` of the feedstock is never used as a substitute, even for a one-off
+   check. If `gh` itself fails (not installed, unauthenticated, rate-limited, no network), the
+   check reports `checked: false` (the normal "we don't know" outcome — see below), it does not
+   fall back to raw git.
+
+One consequence worth knowing: every feedstock this check is ever asked about ends up with a
+durable local clone under `conda-forge/<pkg>-feedstock` **and** a fork under `github.com/luhenry`
+— including CUDA `WONTFIX_PLATFORM` feedstocks and shadow dependencies that never reach Phase 3.
+That's accepted as the cost of having exactly one technique for "get me this feedstock locally,"
+not an oversight.
+
+**Subscribing to riscv64 PR notifications is folded into the same call.** After ensuring a local
+clone exists (steps 1-2 above), `check_feedstock` also calls
+`cf_core.gh_client.subscribe_to_riscv64_prs`: a `gh pr list --search riscv64 --state open` on the
+feedstock, subscribing (`gh api -X PUT .../subscription -f subscribed=true -f ignored=false`) to
+every match. This runs on *every* Phase 1 Verify pass, not just the first time a feedstock is
+forked — so a riscv64 PR opened after the initial fork still gets picked up on the next run. It's
+deliberately broader than "the one bot PR and one best PR the migration page happens to know
+about": an independent human PR that isn't (yet) reflected there still gets found and subscribed
+to, because the search isn't keyed off any specific PR number. Manual equivalent (also exposed as
+`python3 -m cf_core gh subscribe-riscv64 <owner/repo>`):
 
 ```bash
-git init -q tmp-check && cd tmp-check
-git remote add origin https://github.com/conda-forge/<pkg>-feedstock.git
-git fetch -q --depth 1 origin main
-git show origin/main:conda-forge.yml | grep -A2 build_platform
+gh pr list --repo conda-forge/<pkg>-feedstock --state open --search riscv64 \
+  --json number --jq '.[].number' | while read -r n; do
+  gh api -X PUT "repos/conda-forge/<pkg>-feedstock/issues/$n/subscription" \
+    -f subscribed=true -f ignored=false
+done
+```
+
+Both fork/clone and subscribe are implemented in `cf_core.migration_source`
+(`fetch_file_at_ref_from_local_clone`) and `cf_core.gh_client` (`fork_and_clone`,
+`subscribe_to_riscv64_prs`), orchestrated by `cf_core.conda_forge_yml_check.check_feedstock` —
+callers don't do any of these steps themselves. The result's `source` field (`"local_clone"` or
+`null`) confirms the conda-forge.yml read actually happened; `riscv64_pr_subscriptions` lists
+every PR found and whether the subscribe call for it succeeded — both useful for debugging.
+
+Manual fallback (same technique the CLI uses under the hood, useful for a one-off check outside
+this repo's tooling). Fork it first if you haven't already — same command as "Contributing to a
+feedstock" below, safe to re-run (it's a no-op if the clone already exists):
+
+```bash
+gh repo fork --clone --fork-name conda-forge-<pkg>-feedstock \
+  https://github.com/conda-forge/<pkg>-feedstock <pkg>-feedstock
+cd conda-forge/<pkg>-feedstock
+git fetch -q upstream main && git show FETCH_HEAD:conda-forge.yml | grep -A2 build_platform
 ```
 
 To inspect an exact PR's diff (`cf_core.conda_forge_yml_check.diff_pr(feedstock, pr_number)`,
-CLI: `python3 -m cf_core verify diff-pr <name> <pr_number>`) — works without any `gh`/API access,
-just plain git:
+CLI: `python3 -m cf_core verify diff-pr <name> <pr_number>`) — same fork-first requirement:
 
 ```bash
-git fetch -q origin refs/pull/<pr-number>/head:pr-<pr-number>
-git diff origin/main pr-<pr-number> -- conda-forge.yml recipe/
+cd conda-forge/<pkg>-feedstock   # fork+clone first (above) if this doesn't exist yet
+git fetch -q upstream main                              # base
+git fetch -q upstream refs/pull/<pr-number>/head         # head, into FETCH_HEAD
+git diff <base-sha-from-first-fetch> FETCH_HEAD -- conda-forge.yml recipe/
 ```
 
 This is how the pandoc-feedstock#171 correctness bug was confirmed exactly (see
 `state/pandoc.json`): the recipe's `# [linux and not aarch64]` source-URL selector for
 the linux-amd64 binary also matches riscv64, so the PR would repackage an x86-64 binary
-under the riscv64 label.
+under the riscv64 label. (That check predates the fork-first requirement above and used a
+disposable clone at the time — the fork-and-read technique finds the same bug.)
 
 ## Policy: never bundle v1 migration into the riscv64 path
 
@@ -323,8 +391,12 @@ plain `git clone` over `https://github.com/...` — a different code path (smart
 protocol vs. REST API). **This only gets you the file contents of a public repo** — it does
 NOT unblock PR/issue/CI-check API calls (`gh pr view`, etc.), which still need real `gh`
 access (see `cf_core/gh_client.py`). The same module also exposes `fetch_file_at_ref` (an
-arbitrary file at an arbitrary ref, generalized for `conda_forge_yml_check.py`) and
-`diff_pr_files` (a PR's head ref diffed against `main`, no `gh` needed at all).
+arbitrary file at an arbitrary ref) and `diff_pr_files` (a PR's head ref diffed against `main`) —
+both ephemeral-tmpdir techniques, used by `fetch_migration_json` above (a data-repo status file,
+not a feedstock — there's nothing to fork). `conda_forge_yml_check.py` does **not** use these for
+feedstocks: `fetch_file_at_ref_from_local_clone` / `diff_pr_files_in_local_clone` are the
+local-clone-reading counterparts it uses instead, described in "Verification" below, backed by a
+real `gh repo fork --clone` (never a disposable git clone) when no local clone exists yet.
 
 **Real numbers as of 2026-08-21** (314 total feedstocks tracked in the migration graph that day;
 re-run `python3 -m cf_core graph` for current numbers — the migration moves, don't treat these as
@@ -398,6 +470,33 @@ python3 fetch_ci_log.py "https://github.com/.../actions/runs/.../job/..." --line
 python3 fetch_ci_log.py "https://dev.azure.com/conda-forge/...?buildId=..." --lines 40
 ```
 
+`python3 -m cf_core gh fork-clone <pkg> [--conda-forge-root <path>]` — fork + clone
+`<pkg>-feedstock` (`cf_core.gh_client.fork_and_clone`), idempotent: a no-op if
+`<conda-forge-root>/<pkg>-feedstock` already exists locally. Defaults `--conda-forge-root` to
+the parent of the current working directory (i.e. running it from the `.bot` checkout, as the
+workflows do, resolves to `conda-forge/`). This is what Phase 1 Verify calls internally (via
+`cf_core.conda_forge_yml_check.check_feedstock`) whenever a feedstock has no local clone yet.
+
+```bash
+python3 -m cf_core gh fork-clone libffi
+```
+
+`python3 -m cf_core gh subscribe <owner/repo> <pr-number>` — subscribe to one specific PR's
+notifications (`cf_core.gh_client.subscribe`, the raw `gh api -X PUT .../subscription` call).
+
+```bash
+python3 -m cf_core gh subscribe conda-forge/libffi-feedstock 63
+```
+
+`python3 -m cf_core gh subscribe-riscv64 <owner/repo> [--limit N]` — find every open PR on the
+repo that looks riscv64-related and subscribe to each (`cf_core.gh_client.subscribe_to_riscv64_prs`).
+This is what Phase 1 Verify calls internally on every pass, not just `gh subscribe` to one known
+PR number — see "Verification" above.
+
+```bash
+python3 -m cf_core gh subscribe-riscv64 conda-forge/libffi-feedstock
+```
+
 ---
 
 ## Contributing to a feedstock (manual, Phase 3)
@@ -417,7 +516,13 @@ checkout), not from inside `.bot`.
    ```
 
    This creates the fork under `github.com/luhenry` and clones it locally into
-   `conda-forge/<pkg>-feedstock`.
+   `conda-forge/<pkg>-feedstock`. In practice this step is often already done by the time you
+   get here — Phase 1 Verify (`cf_core verify feedstock`, see "Workflow architecture" above)
+   runs this same command automatically for every feedstock it analyzes. Running it again is
+   harmless either way: `cf_core gh fork-clone` skips the `gh` call if
+   `conda-forge/<pkg>-feedstock` already exists locally, and the raw `gh repo fork --clone`
+   command above simply errors (non-destructively) if the fork/clone already exists — check
+   first with `ls conda-forge/<pkg>-feedstock` before assuming you need this step.
 
 2. **If a PR already exists** (from the bot or another contributor) and the work needs to
    build on it: after step 1 has created and cloned the fork, `cd` into
@@ -438,8 +543,13 @@ checkout), not from inside `.bot`.
    ```
 
    Do this for every PR you fork/checkout/open, so Ludovic gets notified of new activity
-   on it. (Not yet verified end-to-end in this environment — confirm the endpoint responds
-   `200` the first time you run it, and flag here if it doesn't.)
+   on it. Phase 1 Verify already does this automatically for every open riscv64-related PR it
+   can find via search (`cf_core gh subscribe-riscv64`, via
+   `cf_core.gh_client.subscribe_to_riscv64_prs` — same underlying `gh api` call, just applied to
+   every matching PR instead of one specific number), so it's usually already in place; run
+   `gh subscribe` yourself only for a PR that search wouldn't find -- e.g. a brand new minimal
+   PR you just opened in this same Phase 3 session, before the next Verify pass has a chance to
+   pick it up on its own.
 
 4. **Activate the `conda-smithy` conda environment** before doing any recipe work:
 

@@ -12,6 +12,15 @@ cf_core.conda_forge_yml_check, flipping stale actions deterministically.
 
 Throttled by the *existing* `last_checked` field (not a new one) so this isn't re-checking every
 tracked feedstock's GitHub state on every single run -- see DEFAULT_THROTTLE.
+
+Note: `cf_core.conda_forge_yml_check.check_feedstock` forks+clones a feedstock via `gh` the first
+time it's asked about it, and subscribes to its open riscv64 PRs on *every* call (see that
+module's docstring) -- so a shadow dependency reconciled here, or a "ready" feedstock passed to
+check_ready_already_done, ends up with a local clone and a fork under `github.com/luhenry` even
+if it never reaches Phase 3, and its riscv64 PR notifications get (re-)subscribed to every time
+this module checks it. Throttling limits how often `reconcile_tracked` re-checks a given
+tracked feedstock; `check_ready_already_done` is not throttled at all (called fresh each triage
+run for every "ready" feedstock) so its subscribe calls are the most frequent in the pipeline.
 """
 from __future__ import annotations
 

@@ -187,6 +187,16 @@ phase('Summarize')
 for (const r of results) {
   const rec = r.recommendation ?? {}
   const src = feedstockList.find(f => f.name === r.feedstock)
+
+  // Fork/clone and riscv64-PR-subscribe both happen as a side effect of the Verify phase's
+  // `cf_core verify feedstock` call now (see analyze_feedstock.js) -- neither is written to
+  // state/*.json (not migration-tracking facts, just operational plumbing), but worth a log
+  // line so a broken `gh` auth/rate-limit doesn't go unnoticed.
+  const failedSubscriptions = (r.riscv64_pr_subscriptions ?? []).filter(s => !s.subscribed)
+  if (failedSubscriptions.length > 0) {
+    log(`${r.feedstock}: failed to subscribe to ${failedSubscriptions.length} riscv64 PR notification(s) -- ${failedSubscriptions.map(s => `#${s.number}`).join(', ')}`)
+  }
+
   const fields = {
     best_pr_url: r.best_pr_url,
     last_checked: now,

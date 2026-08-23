@@ -113,7 +113,7 @@ def cmd_verify_feedstock(args):
     result = {
         "feedstock": args.name,
         "is_cuda_wontfix": policy.is_cuda_wontfix(args.name),
-        "conda_forge_yml": cfy.check_feedstock(args.name),
+        "conda_forge_yml": cfy.check_feedstock(args.name, args.conda_forge_root),
     }
 
     if args.pr_json:
@@ -140,7 +140,7 @@ def cmd_verify_feedstock(args):
 
 
 def cmd_verify_diff_pr(args):
-    diff_text = cfy.diff_pr(args.name, args.pr_number)
+    diff_text = cfy.diff_pr(args.name, args.pr_number, conda_forge_root=args.conda_forge_root)
     _print({"feedstock": args.name, "pr_number": args.pr_number, "diff": diff_text})
 
 
@@ -171,6 +171,26 @@ def cmd_state_write(args):
 def cmd_snapshot_diff(args):
     data = ms.fetch_migration_json()
     _print(snap.diff_against_last(data))
+
+
+# ── gh ────────────────────────────────────────────────────────────────────────────────────────
+# Backs Phase 1 Verify's automatic fork/clone + subscribe-to-notifications behavior -- previously
+# a Phase-3-only, human-run procedure documented in CLAUDE.md. `verify feedstock` above already
+# calls fork-clone and subscribe-riscv64 internally via cf_core.conda_forge_yml_check.
+# check_feedstock; these three standalone verbs exist for manual/ad hoc use (CLAUDE.md's "Manual
+# fallback") and are all idempotent, safe to call repeatedly.
+
+def cmd_gh_fork_clone(args):
+    _print(gh_client.fork_and_clone(args.name, args.conda_forge_root))
+
+
+def cmd_gh_subscribe(args):
+    ok = gh_client.subscribe(args.repo, args.pr_number)
+    _print({"repo": args.repo, "pr_number": args.pr_number, "ok": ok})
+
+
+def cmd_gh_subscribe_riscv64(args):
+    _print({"repo": args.repo, "subscriptions": gh_client.subscribe_to_riscv64_prs(args.repo, args.limit)})
 
 
 # ── argparse wiring ───────────────────────────────────────────────────────────────────────────
@@ -211,11 +231,16 @@ def build_parser() -> argparse.ArgumentParser:
     p_verify_fs = verify_sub.add_parser("feedstock")
     p_verify_fs.add_argument("name")
     p_verify_fs.add_argument("--pr-json", help="compact JSON: title, files, body, author_login, bot_pr_number, repo_is_v1")
+    p_verify_fs.add_argument(
+        "--conda-forge-root",
+        help="where to look for an existing local clone to reuse (default: cf_core.migration_source.default_conda_forge_root(), i.e. the parent of cwd)",
+    )
     p_verify_fs.set_defaults(func=cmd_verify_feedstock)
 
     p_verify_diff = verify_sub.add_parser("diff-pr")
     p_verify_diff.add_argument("name")
     p_verify_diff.add_argument("pr_number", type=int)
+    p_verify_diff.add_argument("--conda-forge-root", help="same default as `verify feedstock`")
     p_verify_diff.set_defaults(func=cmd_verify_diff_pr)
 
     p_reconcile = sub.add_parser("reconcile", help="re-verify existing state against ground truth")
@@ -241,6 +266,28 @@ def build_parser() -> argparse.ArgumentParser:
     snapshot_sub = p_snapshot.add_subparsers(dest="snapshot_command", required=True)
     p_snap_diff = snapshot_sub.add_parser("diff")
     p_snap_diff.set_defaults(func=cmd_snapshot_diff)
+
+    p_gh = sub.add_parser("gh", help="fork/clone + notification-subscription setup (Phase 1-2)")
+    gh_sub = p_gh.add_subparsers(dest="gh_command", required=True)
+
+    p_gh_fork = gh_sub.add_parser("fork-clone")
+    p_gh_fork.add_argument("name")
+    # Default resolved lazily (None here, filled in by gh_client.fork_and_clone /
+    # migration_source.default_conda_forge_root at call time) rather than baked in at argparse
+    # setup time -- same convention used by `verify feedstock`/`verify diff-pr` above, so all
+    # three subcommands that accept --conda-forge-root agree on both the meaning and the default.
+    p_gh_fork.add_argument("--conda-forge-root", help="default: cf_core.migration_source.default_conda_forge_root()")
+    p_gh_fork.set_defaults(func=cmd_gh_fork_clone)
+
+    p_gh_sub = gh_sub.add_parser("subscribe")
+    p_gh_sub.add_argument("repo", help="e.g. conda-forge/libffi-feedstock")
+    p_gh_sub.add_argument("pr_number", type=int)
+    p_gh_sub.set_defaults(func=cmd_gh_subscribe)
+
+    p_gh_sub_riscv64 = gh_sub.add_parser("subscribe-riscv64", help="subscribe to every open riscv64-related PR on a repo")
+    p_gh_sub_riscv64.add_argument("repo", help="e.g. conda-forge/libffi-feedstock")
+    p_gh_sub_riscv64.add_argument("--limit", type=int, default=20)
+    p_gh_sub_riscv64.set_defaults(func=cmd_gh_subscribe_riscv64)
 
     return parser
 

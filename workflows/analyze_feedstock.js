@@ -1,8 +1,8 @@
 export const meta = {
   name: 'analyze-feedstock',
-  description: 'Deterministic pre-checks via cf_core, then gather PR state/comments/CI and decide action (read-only)',
+  description: 'Deterministic pre-checks via cf_core (incl. fork/clone + riscv64 PR subscribe), then gather PR state/comments/CI and decide action',
   phases: [
-    { title: 'Verify', detail: 'CUDA / conda-forge.yml deterministic pre-checks (no LLM reasoning)' },
+    { title: 'Verify', detail: 'CUDA / conda-forge.yml checks, fork+clone, riscv64 PR notification subscribe -- all deterministic, no LLM reasoning' },
     { title: 'Gather', detail: 'fetch PR state, comments, CI checks -- genuinely fuzzy free-text work' },
     { title: 'Analyze', detail: 'synthesize findings into a recommended action' },
   ],
@@ -29,6 +29,10 @@ function skipResult(action, reason, details, riscv64CiPassing) {
     best_pr_url: bestPrUrl,
     best_pr_author: bestPrAuthor,
     num_descendants: args.num_descendants,
+    // `verify` (the Phase 0 deterministic pre-check, computed before either short-circuit that
+    // calls this helper) already forked/cloned the feedstock and subscribed to its open riscv64
+    // PRs as a side effect -- surface that here too, not just on the non-short-circuited path.
+    riscv64_pr_subscriptions: verify.conda_forge_yml?.riscv64_pr_subscriptions ?? [],
     pr_state: null,
     comments: null,
     ci_analysis: null,
@@ -52,6 +56,13 @@ function skipResult(action, reason, details, riscv64CiPassing) {
 // exactly one implementation (cf_core.policy / cf_core.conda_forge_yml_check), called here via
 // a minimal-effort relay agent whose only job is to run the exact command and hand back its
 // JSON verbatim -- no reasoning, no restated policy prose, no drift risk.
+//
+// This single call also forks+clones the feedstock (if not already local) and subscribes to
+// every open riscv64-related PR on it (cf_core.gh_client.subscribe_to_riscv64_prs) -- see
+// cf_core/conda_forge_yml_check.py's module docstring. There used to be a separate Setup phase
+// for this, using the JS layer's own bestPrNumber/botPrNumber; it's gone now because this call
+// already does the fork/clone as a side effect of the conda-forge.yml check, and the riscv64 PR
+// search is a superset of "just the two PR numbers we already knew about."
 
 phase('Verify')
 
@@ -68,7 +79,13 @@ summarize, or modify it in any way -- just run it and report the JSON it printed
     is_cuda_wontfix: { type: 'boolean' },
     conda_forge_yml: {
       type: 'object',
-      properties: { checked: { type: 'boolean' }, has_riscv64: {}, error: {} },
+      properties: {
+        checked: { type: 'boolean' },
+        has_riscv64: {},
+        error: {},
+        source: {},
+        riscv64_pr_subscriptions: { type: 'array' },
+      },
     },
   },
 }})
@@ -370,6 +387,7 @@ return {
   best_pr_url:     bestPrUrl,
   best_pr_author:  bestPrAuthor,
   num_descendants: args.num_descendants,
+  riscv64_pr_subscriptions: verify.conda_forge_yml?.riscv64_pr_subscriptions ?? [],
   pr_state:        prState,
   comments,
   ci_analysis:     ciAnalysis,
