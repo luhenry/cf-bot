@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "The riscv64 CI fails solely due to a missing dependency: libtiff 4.7.* has no riscv64 candidate in the solver. All other platforms pass. A maintainer comment also notes this PR depends on a pending libffi-feedstock PR #63, suggesting upstream riscv64 packages are still landing.",
   "riscv64_ci_passing": false,
-  "num_descendants": 3
+  "num_descendants": 3,
+  "depth_to_ci_setup": null
 }

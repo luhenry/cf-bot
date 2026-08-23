@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI failures trace back to a single missing riscv64 dependency: libtiff=4.7 is not yet available for linux-riscv64. The solver error propagates across all platforms because the dependency cannot be resolved. This is a classic upstream-dep-not-yet-built situation.",
   "riscv64_ci_passing": false,
-  "num_descendants": 2
+  "num_descendants": 2,
+  "depth_to_ci_setup": 2
 }

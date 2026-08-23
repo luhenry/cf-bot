@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "The riscv64 CI failures are caused entirely by a solver error: `cross-python_linux-riscv64` has no candidates available. This is a missing dependency in the riscv64 ecosystem, not a bug in the feedstock recipe or build scripts. All non-riscv64 platforms pass successfully.",
   "riscv64_ci_passing": false,
-  "num_descendants": 3
+  "num_descendants": 3,
+  "depth_to_ci_setup": 2
 }

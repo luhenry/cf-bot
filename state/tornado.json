@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All riscv64 CI jobs fail with a solver error: `cross-python_linux-riscv64` does not exist in the channel. This is an infrastructure/missing-dep issue, not a tornado build bug. All other platforms pass cleanly.",
   "riscv64_ci_passing": false,
-  "num_descendants": 1
+  "num_descendants": 1,
+  "depth_to_ci_setup": 1
 }

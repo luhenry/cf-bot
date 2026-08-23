@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All 5 linux-riscv64 CI jobs fail with a solver error: `cross-python_linux-riscv64` does not exist in the channel. This is an infrastructure/ecosystem gap, not a code bug. All other platforms (linux-64, linux-aarch64, linux-ppc64le, win-64, win-arm64, osx-64, osx-arm64) pass cleanly.",
   "riscv64_ci_passing": false,
-  "num_descendants": 3
+  "num_descendants": 3,
+  "depth_to_ci_setup": 2
 }

@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All six linux_riscv64 CI jobs fail with a dependency solver error: \"No candidates were found for cross-python_linux-riscv64 *.\" This is an infrastructure-level missing package, not a code or recipe bug. All non-riscv64 platforms (linux_64, linux_aarch64, linux_ppc64le, win_64, win_arm64, osx_64, osx_arm64) pass. No action can be taken on the feedstock side until cross-python_linux-riscv64 becomes available in the conda-forge channel.",
   "riscv64_ci_passing": false,
-  "num_descendants": 1
+  "num_descendants": 1,
+  "depth_to_ci_setup": 1
 }

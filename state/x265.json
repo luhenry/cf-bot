@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks are passing including riscv64, the PR is not a draft, the linter reports the recipe is in excellent condition, and there is no prior nudge on record for this feedstock.",
   "riscv64_ci_passing": true,
-  "num_descendants": 1
+  "num_descendants": 1,
+  "depth_to_ci_setup": null
 }

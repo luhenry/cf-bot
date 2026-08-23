@@ -1,11 +1,12 @@
 {
   "feedstock": "cuda-nvml-dev",
   "best_pr_url": "https://github.com/conda-forge/cuda-nvml-dev-feedstock/pull/38",
-  "last_checked": "2026-08-21T07:30:00Z",
-  "last_action": "NEEDS_FIX",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-21T11:30:00Z",
+  "last_action": "WONTFIX_PLATFORM",
+  "last_action_at": "2026-08-21T11:30:00Z",
   "confidence": "high",
-  "reason": "The riscv64 CI fails with a Jinja2 template error ('platform' is undefined in meta.yaml). The maintainer explicitly stated that RISC-V is not a supported host platform for CUDA, the PR has a 'wontfix' label, and it remains in draft state. This feedstock cannot be migrated to riscv64 because CUDA itself does not support the RISC-V architecture as a host platform.",
+  "reason": "CUDA is not a supported host platform on RISC-V (no NVIDIA CUDA toolkit for riscv64). This is a structural platform incompatibility, not a fixable build issue. Excluded from active migration tracking per policy; mpich/openmpi already had their CUDA dependency dropped for riscv64.",
   "riscv64_ci_passing": false,
-  "num_descendants": 46
+  "num_descendants": 46,
+  "depth_to_ci_setup": 6
 }

@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "The riscv64 CI fails solely because `python` is not yet available for linux-riscv64. The solver cannot satisfy the `python` dependency for that platform. Maintainer h-vetinari confirmed this PR is blocked on python-feedstock PR #896.",
   "riscv64_ci_passing": false,
-  "num_descendants": 5
+  "num_descendants": 5,
+  "depth_to_ci_setup": null
 }

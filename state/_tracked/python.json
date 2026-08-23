@@ -1,0 +1,16 @@
+{
+  "name": "python",
+  "discovered_from": [
+    "util-linux",
+    "ruamel",
+    "libevent",
+    "rocm-core",
+    "many cross-python_linux-riscv64 WAIT_MISSING_DEP feedstocks"
+  ],
+  "first_seen": "2026-08-21T12:00:00Z",
+  "last_checked": "2026-08-21T12:00:00Z",
+  "riscv64_pr_url": "https://github.com/conda-forge/python-feedstock/pull/896",
+  "riscv64_pr_status": "open, not draft, author h-vetinari. Blocked on: expat, libffi, mpdecimal, readline, sqlite, tk, xorg-libx11, zstd feedstocks landing first.",
+  "last_action": "WAIT_MISSING_DEP",
+  "depth_to_ci_setup": 1
+}

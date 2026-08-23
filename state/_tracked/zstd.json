@@ -1,0 +1,12 @@
+{
+  "name": "zstd",
+  "discovered_from": [
+    "python"
+  ],
+  "first_seen": "2026-08-21T12:00:00Z",
+  "last_checked": "2026-08-21T00:00:00Z",
+  "riscv64_pr_url": null,
+  "riscv64_pr_status": "confirmed done: conda-forge.yml on main has linux_riscv64: linux_64 under build_platform",
+  "last_action": "DONE",
+  "depth_to_ci_setup": 1
+}

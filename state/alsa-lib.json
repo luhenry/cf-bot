@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks pass including linux_riscv64_, PR is open and not a draft, linter reports no issues, and no prior nudge has been sent.",
   "riscv64_ci_passing": true,
-  "num_descendants": 3
+  "num_descendants": 3,
+  "depth_to_ci_setup": null
 }

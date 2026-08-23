@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All 6 linux_riscv64 CI jobs fail with a conda solver error: \"No candidates were found for cross-python_linux-riscv64 *\". This is a missing upstream dependency, not a bug in msgpack-python. All other platforms pass cleanly.",
   "riscv64_ci_passing": false,
-  "num_descendants": 3
+  "num_descendants": 3,
+  "depth_to_ci_setup": 1
 }

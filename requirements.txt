@@ -1,0 +1,9 @@
+# cf_core dependencies -- new as of the rearchitecture. Before this, riscv64_status.py's
+# graph logic was a hand-rolled stdlib-only BFS (no networkx dependency) and there was no YAML
+# parsing anywhere in the automated pipeline (only graph_depth.py, a manual one-off analysis
+# script, used networkx -- it wasn't part of the cron-run pipeline). Unifying everything on
+# cf_core.graph (networkx-based) and adding cf_core.conda_forge_yml_check (needs YAML parsing)
+# makes both a hard dependency of the main pipeline now. Install with:
+#   pip install -r requirements.txt
+networkx>=3.0
+pyyaml>=6.0

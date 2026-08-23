@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks pass including linux_riscv64_, the PR is open and not a draft, and the last nudge was on 2026-08-18 which is more than 48 hours ago. No prior bot state exists for this feedstock.",
   "riscv64_ci_passing": true,
-  "num_descendants": 54
+  "num_descendants": 54,
+  "depth_to_ci_setup": 9
 }

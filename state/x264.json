@@ -7,5 +7,6 @@
   "confidence": "medium",
   "reason": "All CI checks present are passing and linter is clean, but no linux-riscv64 build job appears in the check results despite this being a PR specifically to add riscv64 support. The CI analysis reports riscv64_passing: false with no failing checks, indicating the riscv64 job is absent rather than failing. Cannot confirm riscv64 builds successfully without that job present.",
   "riscv64_ci_passing": false,
-  "num_descendants": 1
+  "num_descendants": 1,
+  "depth_to_ci_setup": null
 }

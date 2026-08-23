@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "The linux_riscv64_ CI fails because `grep` is not yet available for the riscv64 platform. The solver cannot satisfy the `grep` dependency. A maintainer (h-vetinari) has confirmed this PR depends on grep-feedstock PR #19 which is still pending.",
   "riscv64_ci_passing": false,
-  "num_descendants": 2
+  "num_descendants": 2,
+  "depth_to_ci_setup": null
 }

@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "The riscv64 CI job fails with a dependency solver error: \"No candidates were found for cross-python_linux-riscv64 *.\" This is a missing upstream cross-compilation dependency, not a recipe or code bug. Nothing can be done on this feedstock until that dep is available.",
   "riscv64_ci_passing": false,
-  "num_descendants": 1
+  "num_descendants": 1,
+  "depth_to_ci_setup": 1
 }

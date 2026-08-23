@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All Linux platforms and osx_64 fail with the same test error: `tclsh: command not found`. The test runner (`xvfb-run`) cannot find `tclsh`, which is required to run bwidget's tests. This indicates `tclsh` (or a package providing it, such as `tcl`) is missing from the test dependencies in the recipe. The riscv64 build fails for the same reason as all other platforms.",
   "riscv64_ci_passing": false,
-  "num_descendants": 31
+  "num_descendants": 31,
+  "depth_to_ci_setup": 3
 }

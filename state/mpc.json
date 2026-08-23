@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks pass including linux_riscv64_, PR is not a draft, linter is clean, and no prior NUDGE_MERGE action exists in the state file.",
   "riscv64_ci_passing": true,
-  "num_descendants": 144
+  "num_descendants": 144,
+  "depth_to_ci_setup": 3
 }

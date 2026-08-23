@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks pass including linux_riscv64_, PR is not a draft, no prior bot nudge recorded (no state file exists), and the PR has been open since 2026-08-05 with no merge yet.",
   "riscv64_ci_passing": true,
-  "num_descendants": 42
+  "num_descendants": 42,
+  "depth_to_ci_setup": 4
 }

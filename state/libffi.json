@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks are passing, including linux_riscv64_. No nudge has been sent previously (no prior state). The PR is open, not draft, and h-vetinari confirmed on 2026-08-20 that the PR is green and asked maintainers to review.",
   "riscv64_ci_passing": true,
-  "num_descendants": 148
+  "num_descendants": 148,
+  "depth_to_ci_setup": 2
 }

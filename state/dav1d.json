@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks pass including linux_riscv64_, PR is not a draft, no prior nudge on record, and the only comment is a non-blocking linter suggestion about adding tests.",
   "riscv64_ci_passing": true,
-  "num_descendants": 1
+  "num_descendants": 1,
+  "depth_to_ci_setup": null
 }

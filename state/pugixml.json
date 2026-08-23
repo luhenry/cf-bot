@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "The riscv64 CI passes successfully. The only failing check is the conda-forge-linter, which flags a pre-existing recipe issue (package.version interpreted as float, needs quoting). This is unrelated to the riscv64 migration itself.",
   "riscv64_ci_passing": true,
-  "num_descendants": 2
+  "num_descendants": 2,
+  "depth_to_ci_setup": null
 }

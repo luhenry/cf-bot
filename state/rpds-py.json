@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All five linux_riscv64 CI jobs fail with a conda solver error: \"No candidates were found for cross-python_linux-riscv64 *.\" This is a missing infrastructure dependency, not a code bug. All other platforms (linux_64, linux_aarch64, linux_ppc64le, osx_64, osx_arm64, win_64) pass cleanly.",
   "riscv64_ci_passing": false,
-  "num_descendants": 1
+  "num_descendants": 1,
+  "depth_to_ci_setup": 1
 }

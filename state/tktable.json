@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks pass including linux_riscv64_, PR is open and not a draft, and there is no prior nudge on record.",
   "riscv64_ci_passing": true,
-  "num_descendants": 31
+  "num_descendants": 31,
+  "depth_to_ci_setup": 3
 }

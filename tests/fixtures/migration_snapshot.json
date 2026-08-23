@@ -1,0 +1,3637 @@
+{
+  "_feedstock_status": {
+    "abseil-cpp": {
+      "immediate_children": [
+        "libprotobuf",
+        "nodejs",
+        "openvino"
+      ],
+      "num_descendants": 8,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/abseil-cpp-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "alsa-lib": {
+      "created_at": "2026-08-20T17:00:33+00:00",
+      "immediate_children": [
+        "ffmpeg",
+        "jack",
+        "pulseaudio"
+      ],
+      "num_descendants": 3,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/alsa-lib-feedstock/pull/30",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T17:02:25+00:00"
+    },
+    "aom": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/aom-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "argon2-cffi-bindings": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "ast-serialize": {
+      "created_at": "2026-08-14T04:02:08+00:00",
+      "immediate_children": [
+        "mypy"
+      ],
+      "num_descendants": 6,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/ast-serialize-feedstock/pull/8",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-14T04:03:52+00:00"
+    },
+    "astroid": {
+      "created_at": "2026-08-13T20:25:00+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/astroid-feedstock/pull/170",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T20:26:51+00:00"
+    },
+    "attr": {
+      "immediate_children": [
+        "libacl"
+      ],
+      "num_descendants": 54,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/attr-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "backtrace": {
+      "immediate_children": [
+        "llvmdev"
+      ],
+      "num_descendants": 143,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/backtrace-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "binutils": {
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "ncurses",
+        "python",
+        "r-base"
+      ],
+      "num_descendants": 143,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/binutils-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "blas": {
+      "immediate_children": [
+        "gsl",
+        "lapack",
+        "numpy",
+        "r-base"
+      ],
+      "num_descendants": 39,
+      "pre_pr_migrator_status": {}
+    },
+    "blis": {
+      "immediate_children": [
+        "blas"
+      ],
+      "num_descendants": 40,
+      "pre_pr_migrator_status": {}
+    },
+    "brotli": {
+      "immediate_children": [
+        "conda",
+        "conda-forge-ci-setup",
+        "conda-pypi",
+        "dulwich",
+        "libjxl-split",
+        "nodejs"
+      ],
+      "num_descendants": 10,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/brotli-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "bwidget": {
+      "immediate_children": [
+        "r-base"
+      ],
+      "num_descendants": 31,
+      "pre_pr_migrator_status": {}
+    },
+    "bzip2": {
+      "immediate_children": [
+        "cmake",
+        "elfutils",
+        "ffmpeg",
+        "libarchive",
+        "pcre2",
+        "python",
+        "r-base"
+      ],
+      "num_descendants": 146,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/bzip2-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "c-ares": {
+      "immediate_children": [
+        "nghttp2",
+        "nodejs"
+      ],
+      "num_descendants": 43,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/c-ares-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "cairo": {
+      "immediate_children": [
+        "gobject-introspection",
+        "harfbuzz",
+        "librsvg",
+        "pango",
+        "r-base"
+      ],
+      "num_descendants": 37,
+      "pre_pr_migrator_status": {}
+    },
+    "cccl": {
+      "immediate_children": [
+        "cuda-cccl"
+      ],
+      "num_descendants": 48,
+      "pre_pr_migrator_status": {}
+    },
+    "cctools-and-ld64": {
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "ncurses",
+        "r-base"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/cctools-and-ld64-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "cffi": {
+      "immediate_children": [
+        "argon2-cffi-bindings",
+        "cryptography",
+        "pynacl",
+        "zstandard"
+      ],
+      "num_descendants": 8,
+      "pre_pr_migrator_status": {}
+    },
+    "check": {
+      "immediate_children": [
+        "pulseaudio"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "chktex": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "clang-compiler-activation": {
+      "immediate_children": [
+        "blas"
+      ],
+      "num_descendants": 40,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/clang-compiler-activation-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "clhpp": {
+      "immediate_children": [
+        "openvino"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "cli11": {
+      "immediate_children": [
+        "mamba",
+        "micromamba"
+      ],
+      "num_descendants": 5,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/cli11-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "cmake": {
+      "immediate_children": [],
+      "num_descendants": 0,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/cmake-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "compiler-rt": {
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "ncurses",
+        "r-base"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/compiler-rt-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "conda": {
+      "immediate_children": [
+        "conda-forge-ci-setup",
+        "conda-pypi"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "conda-forge-ci-setup": {
+      "immediate_children": [],
+      "num_descendants": 0,
+      "pre_pr_migrator_status": {}
+    },
+    "conda-pypi": {
+      "immediate_children": [
+        "conda"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "conda-standalone": {
+      "created_at": "2026-08-18T23:47:04+00:00",
+      "immediate_children": [],
+      "num_descendants": 0,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/conda-standalone-feedstock/pull/98",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-18T23:48:56+00:00"
+    },
+    "cpp-expected": {
+      "immediate_children": [
+        "mamba",
+        "micromamba"
+      ],
+      "num_descendants": 5,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/cpp-expected-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "cpp-filesystem": {
+      "immediate_children": [
+        "mamba"
+      ],
+      "num_descendants": 4,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/cpp-filesystem-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "cryptography": {
+      "immediate_children": [
+        "conda-forge-ci-setup",
+        "secretstorage"
+      ],
+      "num_descendants": 4,
+      "pre_pr_migrator_status": {}
+    },
+    "cuda-cccl": {
+      "immediate_children": [
+        "cuda-cudart"
+      ],
+      "num_descendants": 47,
+      "pre_pr_migrator_status": {}
+    },
+    "cuda-cudart": {
+      "immediate_children": [
+        "ucc",
+        "ucx-split"
+      ],
+      "num_descendants": 46,
+      "pre_pr_migrator_status": {}
+    },
+    "cuda-nvml-dev": {
+      "created_at": "2026-08-05T05:55:30+00:00",
+      "immediate_children": [
+        "ucc",
+        "ucx-split"
+      ],
+      "num_descendants": 46,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/cuda-nvml-dev-feedstock/pull/38",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-05T16:36:45+00:00"
+    },
+    "curl": {
+      "immediate_children": [
+        "cmake",
+        "git",
+        "mamba",
+        "micromamba",
+        "r-base"
+      ],
+      "num_descendants": 37,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/curl-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "dav1d": {
+      "created_at": "2026-08-20T16:59:16+00:00",
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/dav1d-feedstock/pull/39",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T17:00:56+00:00"
+    },
+    "dbus": {
+      "immediate_children": [
+        "pulseaudio",
+        "secretstorage"
+      ],
+      "num_descendants": 6,
+      "pre_pr_migrator_status": {}
+    },
+    "debugpy": {
+      "created_at": "2026-08-13T21:28:40+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/debugpy-feedstock/pull/65",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T21:30:40+00:00"
+    },
+    "dovi_tool": {
+      "created_at": "2026-08-20T20:38:02+00:00",
+      "immediate_children": [
+        "libplacebo"
+      ],
+      "num_descendants": 2,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/dovi_tool-feedstock/pull/10",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-21T07:29:08+00:00"
+    },
+    "dulwich": {
+      "created_at": "2026-08-13T21:29:19+00:00",
+      "immediate_children": [
+        "conda"
+      ],
+      "num_descendants": 3,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/dulwich-feedstock/pull/130",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-14T06:21:28+00:00"
+    },
+    "eigen": {
+      "created_at": "2026-08-20T17:48:06+00:00",
+      "immediate_children": [
+        "jack"
+      ],
+      "num_descendants": 3,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/eigen-feedstock/pull/59",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T17:49:43+00:00"
+    },
+    "elfutils": {
+      "immediate_children": [
+        "systemd"
+      ],
+      "num_descendants": 53,
+      "pre_pr_migrator_status": {}
+    },
+    "expat": {
+      "immediate_children": [
+        "bwidget",
+        "cairo",
+        "cmake",
+        "dbus",
+        "ffmpeg",
+        "fontconfig",
+        "git",
+        "gobject-introspection",
+        "harfbuzz",
+        "libass",
+        "librsvg",
+        "pango",
+        "pillow",
+        "python",
+        "r-base",
+        "tktable",
+        "wayland",
+        "xorg-libxft"
+      ],
+      "num_descendants": 146,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/expat-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "fast_float": {
+      "created_at": "2026-08-20T20:07:03+00:00",
+      "immediate_children": [
+        "libplacebo"
+      ],
+      "num_descendants": 2,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/fast_float-feedstock/pull/27",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T20:09:25+00:00"
+    },
+    "ffmpeg": {
+      "immediate_children": [],
+      "num_descendants": 0,
+      "pre_pr_migrator_status": {}
+    },
+    "ffnvcodec-headers": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/ffnvcodec-headers-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "fftw": {
+      "immediate_children": [
+        "pulseaudio"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "fmt": {
+      "immediate_children": [
+        "mamba",
+        "micromamba",
+        "spdlog"
+      ],
+      "num_descendants": 6,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/fmt-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "fontconfig": {
+      "immediate_children": [
+        "bwidget",
+        "cairo",
+        "dovi_tool",
+        "ffmpeg",
+        "libass",
+        "librsvg",
+        "pango",
+        "pillow",
+        "python",
+        "r-base",
+        "tktable",
+        "xorg-libxft"
+      ],
+      "num_descendants": 144,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/fontconfig-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "freetype": {
+      "immediate_children": [
+        "cairo",
+        "dovi_tool",
+        "ffmpeg",
+        "fontconfig",
+        "gobject-introspection",
+        "harfbuzz",
+        "libass",
+        "librsvg",
+        "pango",
+        "pillow",
+        "r-base",
+        "xorg-libxft"
+      ],
+      "num_descendants": 145,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/freetype-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "fribidi": {
+      "immediate_children": [
+        "libass",
+        "pango"
+      ],
+      "num_descendants": 35,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/fribidi-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "gdk-pixbuf": {
+      "immediate_children": [
+        "librsvg"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "gendef": {
+      "immediate_children": [
+        "blas"
+      ],
+      "num_descendants": 40,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/gendef-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "giflib": {
+      "immediate_children": [
+        "libjxl-split",
+        "libwebp"
+      ],
+      "num_descendants": 5,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/giflib-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "git": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/git-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "glib": {
+      "immediate_children": [
+        "cairo",
+        "dbus",
+        "ffmpeg",
+        "gdk-pixbuf",
+        "gobject-introspection",
+        "harfbuzz",
+        "librsvg",
+        "pango",
+        "pulseaudio",
+        "r-base"
+      ],
+      "num_descendants": 44,
+      "pre_pr_migrator_status": {}
+    },
+    "glslang": {
+      "immediate_children": [
+        "shaderc"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "gmp": {
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "ffmpeg",
+        "isl",
+        "mpc",
+        "mpfr",
+        "ncurses",
+        "r-base"
+      ],
+      "num_descendants": 146,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/gmp-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "gobject-introspection": {
+      "immediate_children": [
+        "harfbuzz"
+      ],
+      "num_descendants": 36,
+      "pre_pr_migrator_status": {}
+    },
+    "gperf": {
+      "created_at": "2026-08-05T02:20:05+00:00",
+      "immediate_children": [
+        "seccomp-split"
+      ],
+      "num_descendants": 54,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/gperf-feedstock/pull/16",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-05T02:22:03+00:00"
+    },
+    "graphite2": {
+      "immediate_children": [
+        "harfbuzz"
+      ],
+      "num_descendants": 36,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/graphite2-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "greenlet": {
+      "created_at": "2026-08-13T19:04:30+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/greenlet-feedstock/pull/69",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-14T13:30:13+00:00"
+    },
+    "gsl": {
+      "immediate_children": [
+        "r-base"
+      ],
+      "num_descendants": 31,
+      "pre_pr_migrator_status": {}
+    },
+    "gstreamer-orc": {
+      "created_at": "2026-08-20T18:18:59+00:00",
+      "immediate_children": [
+        "pulseaudio"
+      ],
+      "num_descendants": 2,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/gstreamer-orc-feedstock/pull/18",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T19:18:10+00:00"
+    },
+    "gtest": {
+      "immediate_children": [
+        "abseil-cpp",
+        "libprotobuf",
+        "msgpack-c",
+        "snappy",
+        "zlib-ng"
+      ],
+      "num_descendants": 17,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/gtest-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "harfbuzz": {
+      "immediate_children": [
+        "ffmpeg",
+        "libass",
+        "librsvg",
+        "pango"
+      ],
+      "num_descendants": 35,
+      "pre_pr_migrator_status": {}
+    },
+    "icu": {
+      "immediate_children": [
+        "cairo",
+        "harfbuzz",
+        "libpsl",
+        "libxml2",
+        "nodejs",
+        "r-base",
+        "r-stringi",
+        "sqlite"
+      ],
+      "num_descendants": 149,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/icu-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "imath": {
+      "immediate_children": [
+        "openexr"
+      ],
+      "num_descendants": 3,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/imath-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "intel-gmmlib": {
+      "created_at": "2026-08-20T20:09:15+00:00",
+      "immediate_children": [
+        "intel-media-driver"
+      ],
+      "num_descendants": 3,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/intel-gmmlib-feedstock/pull/57",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T20:11:50+00:00"
+    },
+    "intel-media-driver": {
+      "immediate_children": [
+        "libvpl"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "isl": {
+      "created_at": "2026-08-11T08:29:16+00:00",
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "ncurses",
+        "r-base"
+      ],
+      "num_descendants": 143,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/isl-feedstock/pull/35",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T00:49:43+00:00"
+    },
+    "jack": {
+      "immediate_children": [
+        "pulseaudio"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "jq": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/jq-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "jsoncpp": {
+      "immediate_children": [
+        "libprotobuf"
+      ],
+      "num_descendants": 3,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/jsoncpp-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "keyutils": {
+      "immediate_children": [
+        "krb5"
+      ],
+      "num_descendants": 41,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/keyutils-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "krb5": {
+      "immediate_children": [
+        "curl",
+        "micromamba",
+        "zeromq"
+      ],
+      "num_descendants": 40,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/krb5-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "lame": {
+      "immediate_children": [
+        "ffmpeg",
+        "libsndfile"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "lapack": {
+      "immediate_children": [
+        "blas",
+        "gsl",
+        "numpy",
+        "r-base"
+      ],
+      "num_descendants": 39,
+      "pre_pr_migrator_status": {}
+    },
+    "lazy-object-proxy": {
+      "created_at": "2026-08-14T10:20:09+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/lazy-object-proxy-feedstock/pull/49",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-14T10:21:54+00:00"
+    },
+    "lcms2": {
+      "created_at": "2026-08-13T16:16:22+00:00",
+      "immediate_children": [
+        "libplacebo",
+        "pillow"
+      ],
+      "num_descendants": 4,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/lcms2-feedstock/pull/35",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T16:18:20+00:00"
+    },
+    "lerc": {
+      "immediate_children": [
+        "libtiff"
+      ],
+      "num_descendants": 43,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/lerc-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "level-zero": {
+      "created_at": "2026-08-05T07:28:59+00:00",
+      "immediate_children": [
+        "blas",
+        "openvino"
+      ],
+      "num_descendants": 40,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/level-zero-feedstock/pull/98",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-05T07:30:39+00:00"
+    },
+    "libacl": {
+      "immediate_children": [
+        "systemd"
+      ],
+      "num_descendants": 53,
+      "pre_pr_migrator_status": {}
+    },
+    "libarchive": {
+      "immediate_children": [
+        "conda-forge-ci-setup",
+        "elfutils",
+        "mamba",
+        "micromamba"
+      ],
+      "num_descendants": 56,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libarchive-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libass": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "libcap": {
+      "immediate_children": [
+        "pulseaudio",
+        "systemd"
+      ],
+      "num_descendants": 53,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libcap-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libcufile": {
+      "immediate_children": [
+        "cccl"
+      ],
+      "num_descendants": 49,
+      "pre_pr_migrator_status": {}
+    },
+    "libcurand": {
+      "created_at": "2026-08-05T05:53:14+00:00",
+      "immediate_children": [
+        "cccl"
+      ],
+      "num_descendants": 49,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/libcurand-feedstock/pull/33",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-05T16:36:41+00:00"
+    },
+    "libcxx": {
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "ncurses",
+        "r-base"
+      ],
+      "num_descendants": 143,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libcxx-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libdeflate": {
+      "immediate_children": [
+        "libtiff",
+        "openexr",
+        "r-base"
+      ],
+      "num_descendants": 43,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libdeflate-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libdispatch": {
+      "created_at": "2026-08-05T00:11:55+00:00",
+      "immediate_children": [
+        "cctools-and-ld64"
+      ],
+      "num_descendants": 143,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/libdispatch-feedstock/pull/19",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-22T16:19:08+00:00"
+    },
+    "libdrm": {
+      "immediate_children": [
+        "libva",
+        "rocm-smi"
+      ],
+      "num_descendants": 51,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libdrm-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libedit": {
+      "immediate_children": [
+        "krb5"
+      ],
+      "num_descendants": 41,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libedit-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libev": {
+      "immediate_children": [
+        "nghttp2"
+      ],
+      "num_descendants": 43,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libev-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libevent": {
+      "created_at": "2026-08-20T17:21:57+00:00",
+      "immediate_children": [
+        "openmpi",
+        "openpmix"
+      ],
+      "num_descendants": 5,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/libevent-feedstock/pull/27",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T22:14:47+00:00"
+    },
+    "libfabric": {
+      "immediate_children": [
+        "mpich",
+        "openmpi"
+      ],
+      "num_descendants": 44,
+      "pre_pr_migrator_status": {}
+    },
+    "libffi": {
+      "created_at": "2026-08-05T00:13:27+00:00",
+      "immediate_children": [
+        "cffi",
+        "glib",
+        "gobject-introspection",
+        "p11-kit",
+        "python",
+        "wayland"
+      ],
+      "num_descendants": 145,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/libffi-feedstock/pull/63",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T00:58:45+00:00"
+    },
+    "libflac": {
+      "immediate_children": [
+        "libsndfile"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "libgcrypt": {
+      "immediate_children": [
+        "systemd"
+      ],
+      "num_descendants": 53,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libgcrypt-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libglvnd": {
+      "immediate_children": [
+        "libva"
+      ],
+      "num_descendants": 4,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libglvnd-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libgpg-error": {
+      "immediate_children": [
+        "libgcrypt"
+      ],
+      "num_descendants": 54,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libgpg-error-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libhwloc": {
+      "immediate_children": [
+        "blas",
+        "mpich",
+        "openmpi",
+        "openpmix",
+        "tbb"
+      ],
+      "num_descendants": 46,
+      "pre_pr_migrator_status": {}
+    },
+    "libhwy": {
+      "immediate_children": [
+        "libjxl-split"
+      ],
+      "num_descendants": 2,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libhwy-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libiconv": {
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "ffmpeg",
+        "git",
+        "glib",
+        "libass",
+        "libflac",
+        "libxml2",
+        "ncurses",
+        "popt",
+        "pulseaudio",
+        "r-base",
+        "rsync"
+      ],
+      "num_descendants": 152,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libiconv-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libjpeg-turbo": {
+      "immediate_children": [
+        "gdk-pixbuf",
+        "lcms2",
+        "libjxl-split",
+        "libtiff",
+        "libwebp",
+        "pillow",
+        "r-base"
+      ],
+      "num_descendants": 43,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libjpeg-turbo-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libjxl-split": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "libnl": {
+      "immediate_children": [
+        "libfabric",
+        "openmpi",
+        "rdma-core"
+      ],
+      "num_descendants": 52,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libnl-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libogg": {
+      "created_at": "2026-08-20T17:51:13+00:00",
+      "immediate_children": [
+        "libflac",
+        "libsndfile",
+        "libvorbis"
+      ],
+      "num_descendants": 5,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/libogg-feedstock/pull/18",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T17:52:52+00:00"
+    },
+    "libopus": {
+      "immediate_children": [
+        "ffmpeg",
+        "jack",
+        "libsndfile"
+      ],
+      "num_descendants": 4,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libopus-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libpciaccess": {
+      "immediate_children": [
+        "libdrm"
+      ],
+      "num_descendants": 52,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libpciaccess-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libplacebo": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "libpng": {
+      "immediate_children": [
+        "cairo",
+        "freetype",
+        "gdk-pixbuf",
+        "harfbuzz",
+        "libjxl-split",
+        "librsvg",
+        "libwebp",
+        "openjpeg",
+        "pango",
+        "r-base"
+      ],
+      "num_descendants": 148,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libpng-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libprotobuf": {
+      "created_at": "2026-08-20T19:32:13+00:00",
+      "immediate_children": [
+        "openvino"
+      ],
+      "num_descendants": 2,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/libprotobuf-feedstock/pull/305",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T22:33:21+00:00"
+    },
+    "libpsl": {
+      "immediate_children": [
+        "curl",
+        "micromamba"
+      ],
+      "num_descendants": 38,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libpsl-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "librsvg": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "libsndfile": {
+      "immediate_children": [
+        "pulseaudio"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "libsodium": {
+      "immediate_children": [
+        "pynacl",
+        "zeromq"
+      ],
+      "num_descendants": 4,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libsodium-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libsolv": {
+      "immediate_children": [
+        "mamba",
+        "micromamba"
+      ],
+      "num_descendants": 5,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libsolv-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libssh2": {
+      "immediate_children": [
+        "curl",
+        "micromamba"
+      ],
+      "num_descendants": 38,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libssh2-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libtasn1": {
+      "immediate_children": [
+        "p11-kit"
+      ],
+      "num_descendants": 54,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libtasn1-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libtiff": {
+      "immediate_children": [
+        "gdk-pixbuf",
+        "lcms2",
+        "libwebp",
+        "openjpeg",
+        "openjph",
+        "pillow",
+        "r-base"
+      ],
+      "num_descendants": 42,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libtiff-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libtommath": {
+      "immediate_children": [
+        "bwidget",
+        "pillow",
+        "python",
+        "r-base",
+        "tktable"
+      ],
+      "num_descendants": 143,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libtommath-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libtool": {
+      "created_at": "2026-08-20T16:55:11+00:00",
+      "immediate_children": [
+        "pulseaudio"
+      ],
+      "num_descendants": 2,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/libtool-feedstock/pull/37",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T19:57:50+00:00"
+    },
+    "libuuid": {
+      "immediate_children": [
+        "cctools-and-ld64",
+        "fontconfig",
+        "python",
+        "r-base",
+        "util-linux",
+        "xorg-libsm"
+      ],
+      "num_descendants": 146,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libuuid-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libuv": {
+      "immediate_children": [
+        "cmake",
+        "nodejs",
+        "r-fs"
+      ],
+      "num_descendants": 9,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libuv-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libva": {
+      "immediate_children": [
+        "ffmpeg",
+        "intel-media-driver",
+        "libvpl"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "libvorbis": {
+      "immediate_children": [
+        "ffmpeg",
+        "libsndfile"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "libvpl": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "libvpx": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libvpx-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libwebp": {
+      "created_at": "2026-08-13T21:27:13+00:00",
+      "immediate_children": [
+        "ffmpeg",
+        "pillow"
+      ],
+      "num_descendants": 3,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/libwebp-feedstock/pull/65",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T21:57:11+00:00"
+    },
+    "libwebp-base": {
+      "immediate_children": [
+        "libtiff",
+        "libwebp"
+      ],
+      "num_descendants": 43,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libwebp-base-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libxcb": {
+      "immediate_children": [
+        "cairo",
+        "ffmpeg",
+        "libva",
+        "pillow",
+        "pulseaudio",
+        "vulkan-loader",
+        "xorg-libx11"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libxcb-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libxcrypt": {
+      "immediate_children": [
+        "perl",
+        "util-linux"
+      ],
+      "num_descendants": 59,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libxcrypt-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "libxml2": {
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "compiler-rt",
+        "ffmpeg",
+        "libarchive",
+        "libhwloc",
+        "librsvg",
+        "llvmdev",
+        "ncurses",
+        "r-base",
+        "r-xml2"
+      ],
+      "num_descendants": 147,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/libxml2-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "lief": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "llvmdev": {
+      "immediate_children": [
+        "blas",
+        "blis",
+        "cctools-and-ld64",
+        "clang-compiler-activation",
+        "compiler-rt",
+        "ncurses",
+        "openmp",
+        "r-base"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/llvmdev-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "lz4-c": {
+      "immediate_children": [
+        "libarchive",
+        "micromamba",
+        "rsync",
+        "snappy",
+        "systemd"
+      ],
+      "num_descendants": 59,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/lz4-c-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "lzo": {
+      "immediate_children": [
+        "libarchive"
+      ],
+      "num_descendants": 57,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/lzo-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "make": {
+      "immediate_children": [
+        "r-base"
+      ],
+      "num_descendants": 31,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/make-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "mamba": {
+      "immediate_children": [
+        "conda",
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "maturin": {
+      "immediate_children": [
+        "ast-serialize",
+        "cryptography",
+        "py-rattler",
+        "py-rattler-build",
+        "pydantic-core",
+        "rpds-py",
+        "uv-build"
+      ],
+      "num_descendants": 15,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/maturin-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "mbedtls": {
+      "immediate_children": [
+        "lief"
+      ],
+      "num_descendants": 2,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/mbedtls-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "menuinst": {
+      "created_at": "2026-08-13T21:29:59+00:00",
+      "immediate_children": [
+        "conda",
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 3,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/menuinst-feedstock/pull/65",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T21:31:40+00:00"
+    },
+    "micromamba": {
+      "immediate_children": [],
+      "num_descendants": 0,
+      "pre_pr_migrator_status": {}
+    },
+    "mpc": {
+      "created_at": "2026-08-11T12:34:15+00:00",
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "ncurses",
+        "r-base"
+      ],
+      "num_descendants": 143,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/mpc-feedstock/pull/32",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-22T21:16:01+00:00"
+    },
+    "mpdecimal": {
+      "immediate_children": [
+        "python"
+      ],
+      "num_descendants": 143,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/mpdecimal-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "mpfr": {
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "mpc",
+        "ncurses",
+        "r-base"
+      ],
+      "num_descendants": 144,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/mpfr-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "mpg123": {
+      "immediate_children": [
+        "lame",
+        "libsndfile"
+      ],
+      "num_descendants": 4,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/mpg123-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "mpich": {
+      "immediate_children": [
+        "blas",
+        "fftw"
+      ],
+      "num_descendants": 42,
+      "pre_pr_migrator_status": {}
+    },
+    "msgpack-c": {
+      "immediate_children": [
+        "mamba",
+        "micromamba"
+      ],
+      "num_descendants": 5,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/msgpack-c-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "msgpack-python": {
+      "created_at": "2026-08-13T19:03:41+00:00",
+      "immediate_children": [
+        "conda",
+        "conda-forge-ci-setup",
+        "conda-pypi"
+      ],
+      "num_descendants": 3,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/msgpack-python-feedstock/pull/50",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T19:05:30+00:00"
+    },
+    "mypy": {
+      "immediate_children": [
+        "conda-forge-ci-setup",
+        "mamba",
+        "pytokens"
+      ],
+      "num_descendants": 5,
+      "pre_pr_migrator_status": {}
+    },
+    "nccl": {
+      "created_at": "2026-08-20T17:23:55+00:00",
+      "immediate_children": [
+        "ucc"
+      ],
+      "num_descendants": 5,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/nccl-feedstock/pull/162",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T17:26:20+00:00"
+    },
+    "ncurses": {
+      "immediate_children": [
+        "chktex",
+        "cmake",
+        "libedit",
+        "python",
+        "readline",
+        "sqlite",
+        "texinfo",
+        "util-linux"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/ncurses-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "nghttp2": {
+      "immediate_children": [
+        "curl",
+        "micromamba",
+        "nodejs"
+      ],
+      "num_descendants": 42,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/nghttp2-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "ninja": {
+      "immediate_children": [
+        "numpy"
+      ],
+      "num_descendants": 7,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/ninja-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "nlohmann_json": {
+      "immediate_children": [
+        "lief",
+        "mamba",
+        "micromamba",
+        "openvino"
+      ],
+      "num_descendants": 8,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/nlohmann_json-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "nodejs": {
+      "created_at": "2026-08-20T10:26:49+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup",
+        "playwright",
+        "pnpm",
+        "pnpm-licenses"
+      ],
+      "num_descendants": 4,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/nodejs-feedstock/pull/491",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T10:28:28+00:00"
+    },
+    "numactl": {
+      "immediate_children": [
+        "libcufile"
+      ],
+      "num_descendants": 50,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/numactl-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "numpy": {
+      "immediate_children": [
+        "openvino",
+        "rapidfuzz"
+      ],
+      "num_descendants": 6,
+      "pre_pr_migrator_status": {}
+    },
+    "ocl-icd": {
+      "created_at": "2026-08-11T11:56:48+00:00",
+      "immediate_children": [
+        "blas",
+        "clhpp",
+        "openvino"
+      ],
+      "num_descendants": 41,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/ocl-icd-feedstock/pull/39",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-21T07:27:33+00:00"
+    },
+    "oniguruma": {
+      "immediate_children": [
+        "jq"
+      ],
+      "num_descendants": 2,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/oniguruma-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "openblas": {
+      "created_at": "2026-08-05T07:26:51+00:00",
+      "immediate_children": [
+        "blas"
+      ],
+      "num_descendants": 40,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/openblas-feedstock/pull/192",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-10T21:04:02+00:00"
+    },
+    "opencl-headers": {
+      "created_at": "2026-08-05T06:47:44+00:00",
+      "immediate_children": [
+        "blas",
+        "ocl-icd"
+      ],
+      "num_descendants": 42,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/opencl-headers-feedstock/pull/9",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T14:24:46+00:00"
+    },
+    "openexr": {
+      "immediate_children": [
+        "libjxl-split"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "openh264": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/openh264-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "openjpeg": {
+      "created_at": "2026-08-13T17:23:44+00:00",
+      "immediate_children": [
+        "pillow"
+      ],
+      "num_descendants": 2,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/openjpeg-feedstock/pull/58",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T17:25:32+00:00"
+    },
+    "openjph": {
+      "created_at": "2026-08-20T18:55:09+00:00",
+      "immediate_children": [
+        "openexr"
+      ],
+      "num_descendants": 3,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/openjph-feedstock/pull/39",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-21T02:05:49+00:00"
+    },
+    "openmp": {
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "ncurses",
+        "r-base"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/openmp-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "openmpi": {
+      "immediate_children": [
+        "fftw"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "openpmix": {
+      "immediate_children": [
+        "openmpi"
+      ],
+      "num_descendants": 4,
+      "pre_pr_migrator_status": {}
+    },
+    "openssl": {
+      "immediate_children": [
+        "cryptography",
+        "curl",
+        "ffmpeg",
+        "git",
+        "krb5",
+        "libarchive",
+        "libevent",
+        "libssh2",
+        "mamba",
+        "maturin",
+        "micromamba",
+        "nghttp2",
+        "nodejs",
+        "pixi",
+        "pulseaudio",
+        "py-rattler",
+        "py-rattler-build",
+        "python",
+        "rattler-build",
+        "rsync",
+        "sigtool",
+        "systemd"
+      ],
+      "num_descendants": 153,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/openssl-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "openvino": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "p11-kit": {
+      "created_at": "2026-08-11T09:26:23+00:00",
+      "immediate_children": [
+        "systemd"
+      ],
+      "num_descendants": 53,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/p11-kit-feedstock/pull/44",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-21T07:25:08+00:00"
+    },
+    "pandoc": {
+      "created_at": "2026-08-05T05:10:02+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/pandoc-feedstock/pull/171",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-10T18:20:11+00:00"
+    },
+    "pango": {
+      "immediate_children": [
+        "librsvg",
+        "r-base"
+      ],
+      "num_descendants": 33,
+      "pre_pr_migrator_status": {}
+    },
+    "patch": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/patch-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "patchelf": {
+      "immediate_children": [
+        "conda-forge-ci-setup",
+        "rattler-build"
+      ],
+      "num_descendants": 2,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/patchelf-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "pcre2": {
+      "immediate_children": [
+        "git",
+        "glib",
+        "r-base"
+      ],
+      "num_descendants": 46,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/pcre2-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "perl": {
+      "created_at": "2026-08-05T06:43:26+00:00",
+      "immediate_children": [
+        "chktex",
+        "git",
+        "texinfo"
+      ],
+      "num_descendants": 7,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/perl-feedstock/pull/75",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-11T15:18:07+00:00"
+    },
+    "pillow": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "pixi": {
+      "immediate_children": [],
+      "num_descendants": 0,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/pixi-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "pixman": {
+      "immediate_children": [
+        "cairo"
+      ],
+      "num_descendants": 38,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/pixman-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "pkg-config": {
+      "immediate_children": [
+        "conda-forge-ci-setup",
+        "gobject-introspection",
+        "maturin"
+      ],
+      "num_descendants": 52,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/pkg-config-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "playwright": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "pnpm": {
+      "immediate_children": [
+        "playwright",
+        "pnpm-licenses"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "pnpm-licenses": {
+      "immediate_children": [
+        "playwright"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "popt": {
+      "created_at": "2026-08-11T09:30:13+00:00",
+      "immediate_children": [
+        "rsync"
+      ],
+      "num_descendants": 32,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/popt-feedstock/pull/15",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-14T16:43:08+00:00"
+    },
+    "psutil": {
+      "created_at": "2026-08-13T17:22:18+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup",
+        "mypy"
+      ],
+      "num_descendants": 6,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/psutil-feedstock/pull/99",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T17:24:07+00:00"
+    },
+    "pthread-stubs": {
+      "immediate_children": [
+        "harfbuzz",
+        "libxcb",
+        "xorg-libx11",
+        "xorg-libxext",
+        "xorg-libxfixes",
+        "xorg-libxft",
+        "xorg-libxi",
+        "xorg-libxrandr"
+      ],
+      "num_descendants": 143,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/pthread-stubs-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "pugixml": {
+      "created_at": "2026-08-20T20:10:32+00:00",
+      "immediate_children": [
+        "openvino"
+      ],
+      "num_descendants": 2,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/pugixml-feedstock/pull/31",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T20:12:41+00:00"
+    },
+    "pulseaudio": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "py-rattler": {
+      "created_at": "2026-08-14T04:02:55+00:00",
+      "immediate_children": [
+        "conda"
+      ],
+      "num_descendants": 3,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/py-rattler-feedstock/pull/98",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-14T04:04:49+00:00"
+    },
+    "py-rattler-build": {
+      "created_at": "2026-08-14T04:36:56+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/py-rattler-build-feedstock/pull/52",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-14T04:38:38+00:00"
+    },
+    "pycosat": {
+      "created_at": "2026-08-13T22:13:11+00:00",
+      "immediate_children": [
+        "conda"
+      ],
+      "num_descendants": 3,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/pycosat-feedstock/pull/38",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T22:14:55+00:00"
+    },
+    "pydantic-core": {
+      "created_at": "2026-08-14T03:59:49+00:00",
+      "immediate_children": [
+        "conda",
+        "conda-forge-ci-setup",
+        "lief"
+      ],
+      "num_descendants": 4,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/pydantic-core-feedstock/pull/168",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-14T04:01:30+00:00"
+    },
+    "pynacl": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "python": {
+      "immediate_children": [
+        "argon2-cffi-bindings",
+        "ast-serialize",
+        "astroid",
+        "brotli",
+        "cffi",
+        "conda",
+        "conda-forge-ci-setup",
+        "conda-pypi",
+        "cryptography",
+        "debugpy",
+        "dulwich",
+        "glib",
+        "gobject-introspection",
+        "greenlet",
+        "lazy-object-proxy",
+        "libplacebo",
+        "libxcb",
+        "lief",
+        "llvmdev",
+        "mamba",
+        "maturin",
+        "menuinst",
+        "msgpack-python",
+        "mypy",
+        "numpy",
+        "openvino",
+        "pillow",
+        "psutil",
+        "py-rattler",
+        "py-rattler-build",
+        "pycosat",
+        "pydantic-core",
+        "pynacl",
+        "python-librt",
+        "pytokens",
+        "pyzmq",
+        "rapidfuzz",
+        "rpds-py",
+        "ruamel",
+        "ruamel.yaml.clib",
+        "seccomp-split",
+        "secretstorage",
+        "tbb",
+        "tornado",
+        "ujson",
+        "util-linux",
+        "uv-build",
+        "wrapt",
+        "zstandard"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/python-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "python-librt": {
+      "created_at": "2026-08-13T20:28:09+00:00",
+      "immediate_children": [
+        "mypy"
+      ],
+      "num_descendants": 6,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/python-librt-feedstock/pull/25",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T20:29:43+00:00"
+    },
+    "pytokens": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "pyzmq": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "r-backports": {
+      "immediate_children": [
+        "r-languageserver"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "r-base": {
+      "immediate_children": [
+        "r-backports",
+        "r-base64enc",
+        "r-cli",
+        "r-collections",
+        "r-commonmark",
+        "r-digest",
+        "r-ellipsis",
+        "r-fansi",
+        "r-fastmap",
+        "r-fs",
+        "r-glue",
+        "r-htmltools",
+        "r-jsonlite",
+        "r-languageserver",
+        "r-lazyeval",
+        "r-magrittr",
+        "r-processx",
+        "r-ps",
+        "r-purrr",
+        "r-rdtools",
+        "r-rlang",
+        "r-roxygen2",
+        "r-stringi",
+        "r-tibble",
+        "r-utf8",
+        "r-vctrs",
+        "r-xfun",
+        "r-xml2",
+        "r-yaml"
+      ],
+      "num_descendants": 30,
+      "pre_pr_migrator_status": {}
+    },
+    "r-base64enc": {
+      "immediate_children": [
+        "r-htmltools",
+        "r-languageserver"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "r-cli": {
+      "immediate_children": [
+        "r-languageserver",
+        "r-purrr",
+        "r-roxygen2",
+        "r-tibble",
+        "r-vctrs",
+        "r-xml2"
+      ],
+      "num_descendants": 7,
+      "pre_pr_migrator_status": {}
+    },
+    "r-collections": {
+      "immediate_children": [
+        "r-languageserver"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "r-commonmark": {
+      "immediate_children": [
+        "r-roxygen2"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "r-digest": {
+      "immediate_children": [
+        "r-htmltools",
+        "r-languageserver"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "r-ellipsis": {
+      "immediate_children": [
+        "r-htmltools",
+        "r-languageserver",
+        "r-tibble"
+      ],
+      "num_descendants": 4,
+      "pre_pr_migrator_status": {}
+    },
+    "r-fansi": {
+      "immediate_children": [
+        "r-languageserver",
+        "r-tibble"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "r-fastmap": {
+      "immediate_children": [
+        "r-htmltools"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "r-fs": {
+      "immediate_children": [
+        "r-languageserver",
+        "r-roxygen2"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "r-glue": {
+      "immediate_children": [
+        "r-languageserver",
+        "r-purrr",
+        "r-roxygen2",
+        "r-tibble",
+        "r-vctrs"
+      ],
+      "num_descendants": 6,
+      "pre_pr_migrator_status": {}
+    },
+    "r-htmltools": {
+      "immediate_children": [
+        "r-languageserver"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "r-jsonlite": {
+      "immediate_children": [
+        "r-languageserver"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "r-languageserver": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "r-lazyeval": {
+      "immediate_children": [
+        "r-languageserver"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "r-magrittr": {
+      "immediate_children": [
+        "r-languageserver",
+        "r-purrr",
+        "r-roxygen2",
+        "r-tibble"
+      ],
+      "num_descendants": 5,
+      "pre_pr_migrator_status": {}
+    },
+    "r-processx": {
+      "immediate_children": [
+        "r-languageserver",
+        "r-roxygen2"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "r-ps": {
+      "immediate_children": [
+        "r-processx"
+      ],
+      "num_descendants": 4,
+      "pre_pr_migrator_status": {}
+    },
+    "r-purrr": {
+      "immediate_children": [
+        "r-languageserver"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "r-rdtools": {
+      "immediate_children": [
+        "r-roxygen2"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "r-rlang": {
+      "immediate_children": [
+        "r-ellipsis",
+        "r-htmltools",
+        "r-languageserver",
+        "r-lazyeval",
+        "r-purrr",
+        "r-roxygen2",
+        "r-tibble",
+        "r-vctrs",
+        "r-xml2"
+      ],
+      "num_descendants": 10,
+      "pre_pr_migrator_status": {}
+    },
+    "r-roxygen2": {
+      "immediate_children": [
+        "r-languageserver"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "r-stringi": {
+      "immediate_children": [
+        "r-languageserver"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "r-tibble": {
+      "immediate_children": [
+        "r-languageserver"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "r-utf8": {
+      "immediate_children": [
+        "r-languageserver",
+        "r-tibble"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "r-vctrs": {
+      "immediate_children": [
+        "r-languageserver",
+        "r-purrr",
+        "r-tibble"
+      ],
+      "num_descendants": 4,
+      "pre_pr_migrator_status": {}
+    },
+    "r-xfun": {
+      "immediate_children": [
+        "r-languageserver",
+        "r-roxygen2"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "r-xml2": {
+      "immediate_children": [
+        "r-languageserver",
+        "r-roxygen2"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "r-yaml": {
+      "immediate_children": [
+        "r-languageserver",
+        "r-roxygen2"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "rapidfuzz": {
+      "immediate_children": [
+        "conda"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "rattler-build": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pre_pr_migrator_status": {}
+    },
+    "rdma-core": {
+      "immediate_children": [
+        "libcufile",
+        "libfabric",
+        "ucc",
+        "ucx-split"
+      ],
+      "num_descendants": 51,
+      "pre_pr_migrator_status": {}
+    },
+    "readline": {
+      "immediate_children": [
+        "python",
+        "r-base",
+        "sqlite",
+        "util-linux"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/readline-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "reproc": {
+      "immediate_children": [
+        "mamba",
+        "micromamba"
+      ],
+      "num_descendants": 5,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/reproc-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "rhash": {
+      "immediate_children": [
+        "cmake"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/rhash-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "ripgrep": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/ripgrep-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "rocm-core": {
+      "created_at": "2026-08-05T05:54:08+00:00",
+      "immediate_children": [
+        "rocm-smi"
+      ],
+      "num_descendants": 48,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/rocm-core-feedstock/pull/19",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T18:36:27+00:00"
+    },
+    "rocm-smi": {
+      "created_at": "2026-08-11T09:28:51+00:00",
+      "immediate_children": [
+        "libhwloc"
+      ],
+      "num_descendants": 47,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/rocm-smi-feedstock/pull/25",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-21T07:25:18+00:00"
+    },
+    "rpds-py": {
+      "created_at": "2026-08-14T04:01:21+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/rpds-py-feedstock/pull/57",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-14T04:03:21+00:00"
+    },
+    "rsync": {
+      "immediate_children": [
+        "r-base"
+      ],
+      "num_descendants": 31,
+      "pre_pr_migrator_status": {}
+    },
+    "ruamel": {
+      "created_at": "2026-08-13T17:25:40+00:00",
+      "immediate_children": [
+        "conda",
+        "conda-forge-ci-setup",
+        "conda-pypi"
+      ],
+      "num_descendants": 3,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/ruamel-feedstock/pull/18",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T17:27:33+00:00"
+    },
+    "ruamel.yaml.clib": {
+      "created_at": "2026-08-13T19:00:57+00:00",
+      "immediate_children": [
+        "conda",
+        "conda-forge-ci-setup",
+        "conda-pypi"
+      ],
+      "num_descendants": 3,
+      "pr_status": "unknown",
+      "pr_url": "https://github.com/conda-forge/ruamel.yaml.clib-feedstock/pull/41",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T19:02:48+00:00"
+    },
+    "seccomp-split": {
+      "immediate_children": [
+        "systemd"
+      ],
+      "num_descendants": 53,
+      "pre_pr_migrator_status": {}
+    },
+    "secretstorage": {
+      "immediate_children": [
+        "conda",
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "sed": {
+      "immediate_children": [
+        "r-base"
+      ],
+      "num_descendants": 31,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/sed-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "shaderc": {
+      "immediate_children": [
+        "libplacebo"
+      ],
+      "num_descendants": 2,
+      "pre_pr_migrator_status": {}
+    },
+    "sigtool": {
+      "immediate_children": [
+        "cctools-and-ld64"
+      ],
+      "num_descendants": 143,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/sigtool-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "simdjson": {
+      "immediate_children": [
+        "mamba",
+        "micromamba"
+      ],
+      "num_descendants": 5,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/simdjson-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "snappy": {
+      "created_at": "2026-08-20T17:48:54+00:00",
+      "immediate_children": [
+        "openvino"
+      ],
+      "num_descendants": 2,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/snappy-feedstock/pull/42",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T17:50:40+00:00"
+    },
+    "soxr": {
+      "created_at": "2026-08-20T18:20:23+00:00",
+      "immediate_children": [
+        "pulseaudio"
+      ],
+      "num_descendants": 2,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/soxr-feedstock/pull/9",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T19:18:16+00:00"
+    },
+    "spdlog": {
+      "immediate_children": [
+        "mamba",
+        "micromamba"
+      ],
+      "num_descendants": 5,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/spdlog-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "spirv-tools": {
+      "created_at": "2026-08-20T17:47:18+00:00",
+      "immediate_children": [
+        "glslang",
+        "shaderc"
+      ],
+      "num_descendants": 4,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/spirv-tools-feedstock/pull/36",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T17:49:05+00:00"
+    },
+    "sqlite": {
+      "immediate_children": [
+        "nodejs",
+        "python"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/sqlite-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "su-exec": {
+      "created_at": "2026-08-05T09:06:12+00:00",
+      "immediate_children": [],
+      "num_descendants": 0,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/su-exec-feedstock/pull/11",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T14:31:58+00:00"
+    },
+    "svt-av1": {
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/svt-av1-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "systemd": {
+      "immediate_children": [
+        "pulseaudio",
+        "rdma-core"
+      ],
+      "num_descendants": 52,
+      "pre_pr_migrator_status": {}
+    },
+    "tapi": {
+      "immediate_children": [
+        "cctools-and-ld64"
+      ],
+      "num_descendants": 143,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/tapi-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "tbb": {
+      "immediate_children": [
+        "blas",
+        "openvino"
+      ],
+      "num_descendants": 40,
+      "pre_pr_migrator_status": {}
+    },
+    "termcolor-cpp": {
+      "immediate_children": [
+        "mamba"
+      ],
+      "num_descendants": 4,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/termcolor-cpp-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "texinfo": {
+      "immediate_children": [
+        "check"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "texlab": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/texlab-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "tini": {
+      "immediate_children": [],
+      "num_descendants": 0,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/tini-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "tktable": {
+      "immediate_children": [
+        "r-base"
+      ],
+      "num_descendants": 31,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/tktable-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "tornado": {
+      "created_at": "2026-08-13T19:02:50+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/tornado-feedstock/pull/83",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T19:04:48+00:00"
+    },
+    "ucc": {
+      "immediate_children": [
+        "openmpi"
+      ],
+      "num_descendants": 4,
+      "pre_pr_migrator_status": {}
+    },
+    "ucx-split": {
+      "immediate_children": [
+        "mpich",
+        "openmpi",
+        "ucc"
+      ],
+      "num_descendants": 45,
+      "pre_pr_migrator_status": {}
+    },
+    "ujson": {
+      "created_at": "2026-08-13T20:23:10+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/ujson-feedstock/pull/66",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T20:24:48+00:00"
+    },
+    "util-linux": {
+      "created_at": "2026-08-18T13:59:12+00:00",
+      "immediate_children": [
+        "systemd"
+      ],
+      "num_descendants": 53,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/util-linux-feedstock/pull/57",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-18T14:00:53+00:00"
+    },
+    "uv": {
+      "immediate_children": [
+        "conda",
+        "conda-forge-ci-setup",
+        "conda-pypi",
+        "numpy"
+      ],
+      "num_descendants": 7,
+      "pre_pr_migrator_status": {}
+    },
+    "uv-build": {
+      "created_at": "2026-08-14T04:00:35+00:00",
+      "immediate_children": [
+        "conda",
+        "cryptography"
+      ],
+      "num_descendants": 5,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/uv-build-feedstock/pull/131",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-14T04:02:13+00:00"
+    },
+    "vulkan-headers": {
+      "immediate_children": [
+        "ffmpeg",
+        "libplacebo",
+        "vulkan-loader"
+      ],
+      "num_descendants": 3,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/vulkan-headers-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "vulkan-loader": {
+      "immediate_children": [
+        "ffmpeg",
+        "libplacebo"
+      ],
+      "num_descendants": 2,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/vulkan-loader-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "wayland": {
+      "immediate_children": [
+        "libva"
+      ],
+      "num_descendants": 4,
+      "pre_pr_migrator_status": {}
+    },
+    "winpthreads": {
+      "immediate_children": [
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "ncurses",
+        "r-base"
+      ],
+      "num_descendants": 143,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/winpthreads-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "wrapt": {
+      "created_at": "2026-08-13T17:21:26+00:00",
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/wrapt-feedstock/pull/61",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-13T17:23:20+00:00"
+    },
+    "x264": {
+      "created_at": "2026-08-20T20:11:47+00:00",
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/x264-feedstock/pull/34",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T20:13:51+00:00"
+    },
+    "x265": {
+      "created_at": "2026-08-20T20:08:16+00:00",
+      "immediate_children": [
+        "ffmpeg"
+      ],
+      "num_descendants": 1,
+      "pr_status": "unstable",
+      "pr_url": "https://github.com/conda-forge/x265-feedstock/pull/6",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T20:09:55+00:00"
+    },
+    "xbyak": {
+      "created_at": "2026-08-20T20:39:24+00:00",
+      "immediate_children": [
+        "openvino"
+      ],
+      "num_descendants": 2,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/xbyak-feedstock/pull/72",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T20:41:03+00:00"
+    },
+    "xorg-libice": {
+      "immediate_children": [
+        "cairo",
+        "pulseaudio",
+        "r-base",
+        "xorg-libsm",
+        "xorg-libxt"
+      ],
+      "num_descendants": 41,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libice-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libsm": {
+      "immediate_children": [
+        "cairo",
+        "pulseaudio",
+        "r-base",
+        "xorg-libxt"
+      ],
+      "num_descendants": 40,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libsm-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libx11": {
+      "immediate_children": [
+        "bwidget",
+        "cairo",
+        "ffmpeg",
+        "libglvnd",
+        "libva",
+        "pillow",
+        "pulseaudio",
+        "python",
+        "r-base",
+        "tktable",
+        "vulkan-loader",
+        "xorg-libxext",
+        "xorg-libxfixes",
+        "xorg-libxft",
+        "xorg-libxi",
+        "xorg-libxrandr",
+        "xorg-libxrender",
+        "xorg-libxt",
+        "xorg-libxtst"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libx11-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libxau": {
+      "immediate_children": [
+        "libxcb"
+      ],
+      "num_descendants": 143,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libxau-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libxdmcp": {
+      "immediate_children": [
+        "libxcb"
+      ],
+      "num_descendants": 143,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libxdmcp-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libxext": {
+      "immediate_children": [
+        "cairo",
+        "ffmpeg",
+        "libglvnd",
+        "libva",
+        "xorg-libxi",
+        "xorg-libxrandr",
+        "xorg-libxtst"
+      ],
+      "num_descendants": 48,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libxext-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libxfixes": {
+      "immediate_children": [
+        "ffmpeg",
+        "libva",
+        "xorg-libxi"
+      ],
+      "num_descendants": 7,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libxfixes-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libxft": {
+      "immediate_children": [
+        "bwidget",
+        "pillow",
+        "python",
+        "r-base",
+        "tktable"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libxft-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libxi": {
+      "immediate_children": [
+        "xorg-libxtst"
+      ],
+      "num_descendants": 3,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libxi-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libxrandr": {
+      "immediate_children": [
+        "vulkan-loader"
+      ],
+      "num_descendants": 3,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libxrandr-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libxrender": {
+      "immediate_children": [
+        "cairo",
+        "xorg-libxft",
+        "xorg-libxrandr"
+      ],
+      "num_descendants": 142,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libxrender-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libxt": {
+      "immediate_children": [
+        "r-base"
+      ],
+      "num_descendants": 31,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libxt-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-libxtst": {
+      "immediate_children": [
+        "pulseaudio"
+      ],
+      "num_descendants": 2,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-libxtst-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-util-macros": {
+      "immediate_children": [
+        "libpciaccess",
+        "libxcb",
+        "pthread-stubs",
+        "xorg-libice",
+        "xorg-libsm",
+        "xorg-libx11",
+        "xorg-libxau",
+        "xorg-libxdmcp",
+        "xorg-libxext",
+        "xorg-libxfixes",
+        "xorg-libxft",
+        "xorg-libxi",
+        "xorg-libxrandr",
+        "xorg-libxrender",
+        "xorg-libxt",
+        "xorg-libxtst",
+        "xorg-xorgproto",
+        "xorg-xtrans"
+      ],
+      "num_descendants": 155,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-util-macros-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-xorgproto": {
+      "immediate_children": [
+        "bwidget",
+        "cairo",
+        "ffmpeg",
+        "gobject-introspection",
+        "harfbuzz",
+        "libglvnd",
+        "librsvg",
+        "libxcb",
+        "pango",
+        "pillow",
+        "pulseaudio",
+        "python",
+        "r-base",
+        "tktable",
+        "vulkan-loader",
+        "xorg-libice",
+        "xorg-libsm",
+        "xorg-libx11",
+        "xorg-libxau",
+        "xorg-libxdmcp",
+        "xorg-libxext",
+        "xorg-libxfixes",
+        "xorg-libxft",
+        "xorg-libxi",
+        "xorg-libxrandr",
+        "xorg-libxrender",
+        "xorg-libxt",
+        "xorg-libxtst"
+      ],
+      "num_descendants": 147,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-xorgproto-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xorg-xtrans": {
+      "immediate_children": [
+        "xorg-libice",
+        "xorg-libsm",
+        "xorg-libx11"
+      ],
+      "num_descendants": 145,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xorg-xtrans-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xxhash": {
+      "immediate_children": [
+        "libplacebo",
+        "rsync"
+      ],
+      "num_descendants": 34,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xxhash-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "xz": {
+      "immediate_children": [
+        "cmake",
+        "elfutils",
+        "ffmpeg",
+        "gdk-pixbuf",
+        "libarchive",
+        "librsvg",
+        "libtiff",
+        "libxml2",
+        "micromamba",
+        "python",
+        "r-base",
+        "r-xml2",
+        "systemd"
+      ],
+      "num_descendants": 154,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/xz-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "yaml": {
+      "immediate_children": [
+        "conda-forge-ci-setup"
+      ],
+      "num_descendants": 1,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/yaml-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "yaml-cpp": {
+      "immediate_children": [
+        "mamba",
+        "micromamba"
+      ],
+      "num_descendants": 5,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/yaml-cpp-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "zeromq": {
+      "created_at": "2026-08-20T12:31:29+00:00",
+      "immediate_children": [
+        "pyzmq"
+      ],
+      "num_descendants": 2,
+      "pr_status": "clean",
+      "pr_url": "https://github.com/conda-forge/zeromq-feedstock/pull/91",
+      "pre_pr_migrator_status": {},
+      "updated_at": "2026-08-20T12:33:59+00:00"
+    },
+    "zlib": {
+      "immediate_children": [
+        "backtrace",
+        "blas",
+        "blis",
+        "bwidget",
+        "cairo",
+        "cctools-and-ld64",
+        "clang-compiler-activation",
+        "cmake",
+        "compiler-rt",
+        "curl",
+        "dbus",
+        "elfutils",
+        "ffmpeg",
+        "fontconfig",
+        "freetype",
+        "gdk-pixbuf",
+        "git",
+        "glib",
+        "gobject-introspection",
+        "harfbuzz",
+        "imath",
+        "libarchive",
+        "libass",
+        "libjxl-split",
+        "libpng",
+        "libprotobuf",
+        "librsvg",
+        "libsolv",
+        "libssh2",
+        "libtiff",
+        "libxml2",
+        "llvmdev",
+        "micromamba",
+        "ncurses",
+        "nghttp2",
+        "nodejs",
+        "openexr",
+        "openjpeg",
+        "openmpi",
+        "openpmix",
+        "openvino",
+        "pango",
+        "pcre2",
+        "pillow",
+        "pulseaudio",
+        "python",
+        "r-base",
+        "r-xml2",
+        "rsync",
+        "sqlite",
+        "tktable",
+        "util-linux",
+        "xorg-libxft",
+        "zlib-ng",
+        "zstd"
+      ],
+      "num_descendants": 169,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/zlib-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "zlib-ng": {
+      "immediate_children": [
+        "pillow"
+      ],
+      "num_descendants": 2,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/zlib-ng-feedstock",
+      "pre_pr_migrator_status": {}
+    },
+    "zstandard": {
+      "immediate_children": [
+        "conda",
+        "conda-forge-ci-setup",
+        "conda-pypi"
+      ],
+      "num_descendants": 3,
+      "pre_pr_migrator_status": {}
+    },
+    "zstd": {
+      "immediate_children": [
+        "binutils",
+        "blas",
+        "blis",
+        "clang-compiler-activation",
+        "cmake",
+        "conda",
+        "conda-forge-ci-setup",
+        "conda-pypi",
+        "curl",
+        "dulwich",
+        "elfutils",
+        "libarchive",
+        "libtiff",
+        "llvmdev",
+        "mamba",
+        "micromamba",
+        "ncurses",
+        "nodejs",
+        "python",
+        "r-base",
+        "rsync",
+        "systemd",
+        "zstandard"
+      ],
+      "num_descendants": 153,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/zstd-feedstock",
+      "pre_pr_migrator_status": {}
+    }
+  },
+  "awaiting-parents": [
+    "uv",
+    "glslang",
+    "shaderc",
+    "clhpp",
+    "libvorbis",
+    "rsync",
+    "libflac",
+    "libsndfile",
+    "openexr",
+    "libhwloc",
+    "openpmix",
+    "wayland",
+    "tbb",
+    "seccomp-split",
+    "texinfo",
+    "check",
+    "pyzmq",
+    "chktex",
+    "blis",
+    "lief",
+    "bwidget",
+    "pillow",
+    "libva",
+    "intel-media-driver",
+    "libvpl",
+    "libplacebo",
+    "cffi",
+    "zstandard",
+    "pynacl",
+    "cryptography",
+    "pnpm",
+    "pnpm-licenses",
+    "playwright",
+    "libjxl-split",
+    "mypy",
+    "pytokens",
+    "argon2-cffi-bindings",
+    "glib",
+    "gdk-pixbuf",
+    "dbus",
+    "secretstorage",
+    "cairo",
+    "gobject-introspection",
+    "harfbuzz",
+    "pango",
+    "librsvg",
+    "libass",
+    "mamba",
+    "elfutils",
+    "libacl",
+    "systemd",
+    "rdma-core",
+    "libfabric",
+    "libcufile",
+    "cccl",
+    "cuda-cccl",
+    "cuda-cudart",
+    "ucx-split",
+    "mpich",
+    "blas",
+    "lapack",
+    "numpy",
+    "rapidfuzz",
+    "conda",
+    "conda-pypi",
+    "openvino",
+    "gsl",
+    "r-base",
+    "r-yaml",
+    "r-xfun",
+    "r-utf8",
+    "r-stringi",
+    "r-rlang",
+    "r-rdtools",
+    "r-ps",
+    "r-processx",
+    "r-magrittr",
+    "r-lazyeval",
+    "r-jsonlite",
+    "r-glue",
+    "r-fs",
+    "r-fastmap",
+    "r-fansi",
+    "r-ellipsis",
+    "r-digest",
+    "r-commonmark",
+    "r-collections",
+    "r-cli",
+    "r-xml2",
+    "r-vctrs",
+    "r-tibble",
+    "r-roxygen2",
+    "r-purrr",
+    "r-base64enc",
+    "r-htmltools",
+    "r-backports",
+    "r-languageserver",
+    "conda-forge-ci-setup",
+    "ucc",
+    "openmpi",
+    "fftw",
+    "jack",
+    "pulseaudio",
+    "ffmpeg"
+  ],
+  "awaiting-pr": [
+    "rattler-build",
+    "lame",
+    "micromamba"
+  ],
+  "bot-error": [],
+  "done": [
+    "zlib",
+    "zstd",
+    "binutils",
+    "libsolv",
+    "libpng",
+    "imath",
+    "freetype",
+    "backtrace",
+    "yaml-cpp",
+    "yaml",
+    "xz",
+    "xxhash",
+    "xorg-util-macros",
+    "xorg-xtrans",
+    "xorg-xorgproto",
+    "xorg-libxdmcp",
+    "xorg-libxau",
+    "xorg-libice",
+    "pthread-stubs",
+    "libpciaccess",
+    "libdrm",
+    "winpthreads",
+    "vulkan-headers",
+    "tini",
+    "texlab",
+    "termcolor-cpp",
+    "tapi",
+    "svt-av1",
+    "simdjson",
+    "sed",
+    "ripgrep",
+    "rhash",
+    "reproc",
+    "pkg-config",
+    "pixman",
+    "patchelf",
+    "patch",
+    "openssl",
+    "sigtool",
+    "pixi",
+    "libssh2",
+    "openh264",
+    "oniguruma",
+    "jq",
+    "numactl",
+    "nlohmann_json",
+    "ninja",
+    "mpg123",
+    "mpdecimal",
+    "mbedtls",
+    "make",
+    "lzo",
+    "lz4-c",
+    "libxcrypt",
+    "libwebp-base",
+    "libvpx",
+    "libuv",
+    "libuuid",
+    "xorg-libsm",
+    "libtommath",
+    "libtasn1",
+    "libsodium",
+    "libopus",
+    "libnl",
+    "libjpeg-turbo",
+    "libiconv",
+    "libhwy",
+    "libgpg-error",
+    "libgcrypt",
+    "libev",
+    "libdeflate",
+    "libcxx",
+    "libcap",
+    "lerc",
+    "libtiff",
+    "keyutils",
+    "jsoncpp",
+    "icu",
+    "libxml2",
+    "libpsl",
+    "gtest",
+    "zlib-ng",
+    "msgpack-c",
+    "abseil-cpp",
+    "graphite2",
+    "gmp",
+    "mpfr",
+    "giflib",
+    "gendef",
+    "fribidi",
+    "fmt",
+    "spdlog",
+    "ffnvcodec-headers",
+    "expat",
+    "fontconfig",
+    "cpp-filesystem",
+    "cpp-expected",
+    "cli11",
+    "c-ares",
+    "nghttp2",
+    "bzip2",
+    "python",
+    "maturin",
+    "llvmdev",
+    "openmp",
+    "compiler-rt",
+    "cctools-and-ld64",
+    "ncurses",
+    "readline",
+    "sqlite",
+    "libedit",
+    "krb5",
+    "curl",
+    "clang-compiler-activation",
+    "libxcb",
+    "xorg-libx11",
+    "xorg-libxt",
+    "xorg-libxrender",
+    "xorg-libxft",
+    "xorg-libxfixes",
+    "xorg-libxext",
+    "xorg-libxrandr",
+    "xorg-libxi",
+    "xorg-libxtst",
+    "tktable",
+    "libglvnd",
+    "vulkan-loader",
+    "brotli",
+    "pcre2",
+    "git",
+    "libarchive",
+    "cmake",
+    "attr",
+    "aom"
+  ],
+  "in-pr": [
+    "xbyak",
+    "x265",
+    "x264",
+    "su-exec",
+    "spirv-tools",
+    "soxr",
+    "rocm-core",
+    "rocm-smi",
+    "pugixml",
+    "pandoc",
+    "libevent",
+    "opencl-headers",
+    "ocl-icd",
+    "openblas",
+    "nccl",
+    "perl",
+    "libtool",
+    "libogg",
+    "popt",
+    "libffi",
+    "p11-kit",
+    "libdispatch",
+    "libcurand",
+    "level-zero",
+    "openjph",
+    "openjpeg",
+    "lcms2",
+    "intel-gmmlib",
+    "snappy",
+    "libprotobuf",
+    "gstreamer-orc",
+    "gperf",
+    "mpc",
+    "isl",
+    "libwebp",
+    "fast_float",
+    "dovi_tool",
+    "eigen",
+    "dav1d",
+    "cuda-nvml-dev",
+    "conda-standalone",
+    "wrapt",
+    "ujson",
+    "tornado",
+    "ruamel.yaml.clib",
+    "ruamel",
+    "python-librt",
+    "pycosat",
+    "psutil",
+    "msgpack-python",
+    "menuinst",
+    "uv-build",
+    "rpds-py",
+    "pydantic-core",
+    "py-rattler-build",
+    "py-rattler",
+    "util-linux",
+    "zeromq",
+    "lazy-object-proxy",
+    "greenlet",
+    "debugpy",
+    "nodejs",
+    "dulwich",
+    "astroid",
+    "ast-serialize",
+    "alsa-lib"
+  ],
+  "not-solvable": []
+}

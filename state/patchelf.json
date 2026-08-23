@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks are passing including linux_riscv64_, but h-vetinari already posted a nudge/ping to maintainers at 2026-08-20T12:01:43Z, which is within the last 48 hours. Sending another nudge would be redundant and noisy.",
   "riscv64_ci_passing": true,
-  "num_descendants": 2
+  "num_descendants": 2,
+  "depth_to_ci_setup": 1
 }

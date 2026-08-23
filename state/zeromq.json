@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks pass including linux_riscv64, PR is not a draft, linting is clean, and no prior nudge exists for this feedstock.",
   "riscv64_ci_passing": true,
-  "num_descendants": 2
+  "num_descendants": 2,
+  "depth_to_ci_setup": 2
 }

@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All platforms fail due to a Jinja2 syntax error in meta.yaml: `{{ stdlib(\"c\") }` has a single closing brace instead of `}}`. This is a build bug introduced by the bot's migration commit that prevents the recipe from rendering on every platform, including riscv64.",
   "riscv64_ci_passing": false,
-  "num_descendants": 2
+  "num_descendants": 2,
+  "depth_to_ci_setup": null
 }

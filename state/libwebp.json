@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "The riscv64 CI fails because libtiff=4.7 is not available for linux-riscv64 in the conda-forge channel. This is a missing upstream dependency, not a bug in this feedstock. The win_arm64 failure is unrelated to the riscv64 migration.",
   "riscv64_ci_passing": false,
-  "num_descendants": 3
+  "num_descendants": 3,
+  "depth_to_ci_setup": 2
 }

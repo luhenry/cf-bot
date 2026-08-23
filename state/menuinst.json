@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All 5 linux-riscv64 CI jobs fail at dependency resolution with \"No candidates were found for cross-python_linux-riscv64 *\". This is a solver-level missing dep, not a code bug. All other platforms (linux_64, linux_aarch64, linux_ppc64le, win_64, win_arm64, osx_64, osx_arm64) pass. No prior bot state exists.",
   "riscv64_ci_passing": false,
-  "num_descendants": 3
+  "num_descendants": 3,
+  "depth_to_ci_setup": 1
 }

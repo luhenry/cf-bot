@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All linux_riscv64 CI jobs fail with a solver error: `cross-python_linux-riscv64` does not exist in the channel. This is an infrastructure/dependency availability issue, not a code or build bug in wrapt itself. The package cannot be built until that cross-compilation dependency is published to conda-forge.",
   "riscv64_ci_passing": false,
-  "num_descendants": 1
+  "num_descendants": 1,
+  "depth_to_ci_setup": 1
 }

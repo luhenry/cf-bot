@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks pass including linux_riscv64_, linter is clean, PR is not a draft, and there is no prior bot nudge on record. The open maintainer question from h-vetinari about osx-arm64 native builds was already answered by luhenry. The PR is ready to merge.",
   "riscv64_ci_passing": true,
-  "num_descendants": 57
+  "num_descendants": 57,
+  "depth_to_ci_setup": 12
 }

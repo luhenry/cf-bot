@@ -1,11 +1,12 @@
 {
   "feedstock": "perl",
   "best_pr_url": "https://github.com/conda-forge/perl-feedstock/pull/76",
-  "last_checked": "2026-08-21T07:30:00Z",
-  "last_action": "ESCALATE",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-21T12:00:00Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-21T12:00:00Z",
   "confidence": "high",
-  "reason": "A maintainer (wolfv) has opened a combined draft PR #77 that incorporates the riscv64 changes from this PR alongside a v1/rattler-build recipe conversion. This supersession scenario requires human judgment: should PR #76 be closed in favor of #77, or should #76 be merged first and #77 rebased on top?",
+  "reason": "riscv64 CI passing on the minimal PR (#76 = bot migration + malloc/free type-def fix + absolute-path fix for QEMU testing), PR not draft. Per policy, PR #77 (wolfv, bundles the same riscv64 fixes with a v1/rattler-build conversion) is out of scope and should not block nudging #76 - riscv64 and v1 migrations must not land together due to cross-compiled testing issues under v1. Re-classified from a prior ESCALATE that treated PR coexistence alone as ambiguous.",
   "riscv64_ci_passing": true,
-  "num_descendants": 7
+  "num_descendants": 7,
+  "depth_to_ci_setup": 2
 }

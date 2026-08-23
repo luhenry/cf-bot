@@ -5,7 +5,8 @@
   "last_action": "WAIT_MISSING_DEP",
   "last_action_at": "2026-08-21T07:30:00Z",
   "confidence": "high",
-  "reason": "All four riscv64 CI failures are solver errors for missing `_openmp_mutex *_llvm` / `llvm-openmp` on linux-riscv64. These packages do not yet exist for riscv64. This is a known upstream gap confirmed by maintainer comments (h-vetinari, luhenry) \u2014 not a build or code bug in this PR.",
+  "reason": "All four riscv64 CI failures are solver errors for missing `_openmp_mutex *_llvm` / `llvm-openmp` on linux-riscv64. These packages do not yet exist for riscv64. This is a known upstream gap confirmed by maintainer comments (h-vetinari, luhenry) — not a build or code bug in this PR.",
   "riscv64_ci_passing": false,
-  "num_descendants": 40
+  "num_descendants": 40,
+  "depth_to_ci_setup": 4
 }

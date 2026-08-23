@@ -7,5 +7,6 @@
   "confidence": "high",
   "reason": "All CI checks pass including linux_riscv64_, PR is open and not a draft, linter is clean, no prior bot activity on this feedstock.",
   "riscv64_ci_passing": true,
-  "num_descendants": 54
+  "num_descendants": 54,
+  "depth_to_ci_setup": 9
 }

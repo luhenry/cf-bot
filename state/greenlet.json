@@ -5,7 +5,8 @@
   "last_action": "WAIT_MISSING_DEP",
   "last_action_at": "2026-08-21T07:30:00Z",
   "confidence": "high",
-  "reason": "All riscv64 CI jobs fail with a conda solver error \u2014 no candidates found for cross-python_linux-riscv64. This is a missing upstream dependency, not a code bug. A maintainer comment confirms the PR is blocked on cross-python-feedstock PR #104 being merged first. All non-riscv64 platforms pass cleanly.",
+  "reason": "All riscv64 CI jobs fail with a conda solver error — no candidates found for cross-python_linux-riscv64. This is a missing upstream dependency, not a code bug. A maintainer comment confirms the PR is blocked on cross-python-feedstock PR #104 being merged first. All non-riscv64 platforms pass cleanly.",
   "riscv64_ci_passing": false,
-  "num_descendants": 1
+  "num_descendants": 1,
+  "depth_to_ci_setup": 1
 }
