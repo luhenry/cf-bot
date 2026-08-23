@@ -12,7 +12,7 @@ export const meta = {
 
 // args: { now: "ISO timestamp" }
 const now = args?.now ?? '1970-01-01T00:00:00Z'
-const CF_BOT_DIR = '/home/luhenry/git/conda-forge/.bot'
+const CF_BOT_DIR = '$HOME/git/conda-forge/cf-bot'
 const ANALYZE_SCRIPT = `${CF_BOT_DIR}/workflows/analyze_feedstock.js`
 
 // ── Phase 1: fetch ready feedstocks + snapshot diff ──────────────────────────────────────────

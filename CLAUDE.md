@@ -54,7 +54,7 @@ tests/                        `python3 -m unittest discover -s tests -v` (stdlib
 ## Quick start
 
 ```bash
-cd /home/luhenry/git/conda-forge/.bot
+cd $HOME/git/conda-forge/cf-bot
 pip install -r requirements.txt   # networkx + pyyaml -- see requirements.txt for why these
                                    # are new hard dependencies as of the cf_core rearchitecture
 ```

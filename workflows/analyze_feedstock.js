@@ -20,7 +20,7 @@ const bestPrNumber = bestPrUrl.match(/\/pull\/(\d+)/)?.[1]
 const botPrNumber  = botPrUrl.match(/\/pull\/(\d+)/)?.[1]
 const hasSeparateUserPr = bestPrUrl !== botPrUrl
 
-const CF_BOT_DIR = '/home/luhenry/git/conda-forge/.bot'
+const CF_BOT_DIR = '$HOME/git/conda-forge/cf-bot'
 
 function skipResult(action, reason, details, riscv64CiPassing) {
   return {
