@@ -4,7 +4,7 @@ export const meta = {
   phases: [
     { title: 'Fetch', detail: 'ready-feedstock list (already-sorted, already-structured JSON from cf_core) + migration-graph snapshot diff' },
     { title: 'Reconcile', detail: 'deterministically re-verify existing shadow deps + already-ready feedstocks against conda-forge.yml before spending any LLM cycles' },
-    { title: 'Analyze', detail: 'per-feedstock, pipelined (no cross-item barrier -- one slow feedstock no longer blocks the rest)' },
+    { title: 'Analyze', detail: 'per-feedstock, strictly sequential -- concurrent chains tripped GitHub rate limits' },
     { title: 'Shadow', detail: 'discover new off-page blockers (fuzzy) -- reconciling EXISTING ones already happened in Reconcile' },
     { title: 'Summarize', detail: 'deterministic state writes, commit-message guard, run summary' },
   ],
@@ -29,26 +29,25 @@ const ANALYZE_SCRIPT = `${CF_BOT_DIR}/workflows/analyze_feedstock.js`
 
 phase('Fetch')
 
-const [fetchResult, snapshotResult] = await parallel([
-  () => agent(`
+const fetchResult = await agent(`
 Run exactly this command and return its stdout JSON verbatim as your answer -- do not parse,
 reformat, or interpret it:
 
   cd ${CF_BOT_DIR} && python3 -m cf_core ready-list
 `, { label: 'fetch-list', phase: 'Fetch', effort: 'low', schema: {
-    type: 'object',
-    required: ['ready', 'total_feedstocks'],
-    properties: { ready: { type: 'array', items: { type: 'object' } }, total_feedstocks: { type: 'number' } },
-  }}),
-  () => agent(`
+  type: 'object',
+  required: ['ready', 'total_feedstocks'],
+  properties: { ready: { type: 'array', items: { type: 'object' } }, total_feedstocks: { type: 'number' } },
+}})
+
+const snapshotResult = await agent(`
 Run exactly this command and return its stdout JSON verbatim as your answer:
 
   cd ${CF_BOT_DIR} && python3 -m cf_core graph --target conda-forge-ci-setup --save-snapshot --now "${now}"
 `, { label: 'snapshot', phase: 'Fetch', effort: 'low', schema: {
-    type: 'object',
-    properties: { snapshot_diff: { type: 'object' } },
-  }}),
-])
+  type: 'object',
+  properties: { snapshot_diff: { type: 'object' } },
+}})
 
 const feedstockList = fetchResult.ready
 // Already sorted by cf_core (depth_to_ci_setup asc, num_descendants desc) -- no JS-side sort needed.
@@ -94,13 +93,14 @@ if (alreadyDoneNames.size > 0) {
   log(`${alreadyDoneNames.size} "ready" feedstock(s) are actually already done per conda-forge.yml (migration-page lag): ${[...alreadyDoneNames].join(', ')} -- skipping analysis`)
 }
 
-// ── Phase 3: per-feedstock analysis, pipelined ───────────────────────────────────────────────
+// ── Phase 3: per-feedstock analysis, strictly sequential ─────────────────────────────────────
 //
-// Before this rearchitecture, this was a strict sequential `for` loop -- one feedstock's full
-// 4-stage chain had to finish before the next one started, even though every feedstock's chain
-// is fully independent of every other's. Switched to pipeline(): each feedstock runs its stages
-// independently, no cross-item barrier, so wall-clock is bounded by the slowest single chain
-// rather than the sum of all of them.
+// This ran through pipeline() for a while -- every feedstock's chain is independent, so on paper
+// there's no reason to serialize them. In practice each chain fires a burst of `gh` calls (PR
+// view, status checks, comments, CI logs), and ~10 chains in flight at once blew through GitHub's
+// secondary rate limits, which fail the runs rather than just slowing them down. One feedstock at
+// a time is slower but actually completes; do not reintroduce pipeline()/parallel() here without
+// a rate limiter in front of gh_client.
 
 phase('Analyze')
 
@@ -115,13 +115,16 @@ const toAnalyze = feedstockList.filter(f => {
 
 log(`${feedstockList.length} ready feedstocks, ${alreadyDoneNames.size} already done (reconciled), ${toAnalyze.length} to analyze this run`)
 
-const analyzeResults = await pipeline(
-  toAnalyze,
-  f => {
-    log(`analyzing ${f.name} (${f.num_descendants} descendants, depth ${f.depth_to_ci_setup ?? '?'})`)
-    return workflow({ scriptPath: ANALYZE_SCRIPT }, f)
-  },
-)
+const analyzeResults = []
+for (const [i, f] of toAnalyze.entries()) {
+  log(`analyzing ${f.name} (${i + 1}/${toAnalyze.length}, ${f.num_descendants} descendants, depth ${f.depth_to_ci_setup ?? '?'})`)
+  try {
+    analyzeResults.push(await workflow({ scriptPath: ANALYZE_SCRIPT }, f))
+  } catch (e) {
+    // pipeline() used to swallow a failed item to null; keep the whole run alive the same way.
+    log(`${f.name}: analysis failed, skipping -- ${e?.message ?? e}`)
+  }
+}
 
 const results = analyzeResults.filter(Boolean)
 

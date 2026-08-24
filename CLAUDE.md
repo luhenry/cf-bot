@@ -108,8 +108,9 @@ triage_migration.js          — top-level, runs once per cron tick
   ├─ Reconcile                 relay: cf_core reconcile — deterministically re-verifies EXISTING
   │                            state/_tracked/*.json entries and flags any "ready" feedstock
   │                            that's actually already done, BEFORE any LLM analysis runs
-  ├─ Analyze                   per-feedstock, pipelined (pipeline(), not a sequential for-loop —
-  │  └─ analyze_feedstock.js   each feedstock's chain runs independently, no cross-item barrier)
+  ├─ Analyze                   per-feedstock, strictly sequential (a plain `for` loop, not
+  │  └─ analyze_feedstock.js   pipeline() — concurrent chains tripped GitHub's secondary rate
+  │                            limits, which fail runs rather than just slow them)
   │       ├─ Verify              relay: cf_core verify feedstock — CUDA-wontfix +
   │       │                      conda-forge.yml checks, zero LLM reasoning, short-circuits
   │       │                      WONTFIX_PLATFORM / SKIP_ALREADY_HANDLED before any further gh
