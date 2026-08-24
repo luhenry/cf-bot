@@ -67,19 +67,44 @@ def cmd_ready_list(args):
             continue
         info = feedstocks[name]
         prior = sio.read_state(name) or {}
-        ready.append({
+        pr_url = info.get("pr_url", "")
+        pr_status = info.get("pr_status", "")
+        bot_pr_number = int(pr_url.rstrip("/").split("/")[-1]) if "/pull/" in pr_url else None
+
+        entry = {
             "name": name,
-            "bot_pr_url": info.get("pr_url", ""),
-            "pr_status": info.get("pr_status", ""),
+            "bot_pr_url": pr_url,
+            "pr_status": pr_status,
             "num_descendants": info.get("num_descendants", 0),
             "depth_to_ci_setup": depths.get(name),
             "is_cuda_wontfix": policy.is_cuda_wontfix(name),
+            "best_pr_url": pr_url,
+            "best_pr_author": policy.BOT_AUTHOR,
+            "best_pr_is_v1": False,
             # Merged in deterministically here instead of an LLM agent `cat`-ing ~70 state files
             # itself, which is what the fetch-list step used to do.
             "last_action": prior.get("last_action"),
             "last_action_at": prior.get("last_action_at"),
             "last_checked": prior.get("last_checked"),
-        })
+        }
+
+        # Ported from riscv64_status.py's analyze(): only worth a live `gh` query when the bot
+        # PR itself is failing ("unstable") -- a passing bot PR is already the best option, no
+        # need to look for an alternative. Without this, analyze_feedstock.js's Gather phase has
+        # no best_pr_url/best_pr_author to work from at all (they used to come from here).
+        if bot_pr_number is not None and pr_status == "unstable":
+            repo = f"conda-forge/{name}-feedstock"
+            prs = gh_client.list_open_prs(repo)
+            repo_is_v1 = gh_client.repo_uses_v1_recipe(repo)
+            chosen = policy.choose_best_pr(prs, bot_pr_number, repo_is_v1)
+            if chosen and chosen["author"]["login"] != policy.BOT_AUTHOR:
+                entry["best_pr_url"] = chosen["url"]
+                entry["best_pr_author"] = chosen["author"]["login"]
+                entry["best_pr_is_v1"] = policy.pr_is_v1_migration(
+                    chosen["title"], [f["path"] for f in chosen.get("files", [])], repo_is_v1
+                )
+
+        ready.append(entry)
 
     ready.sort(key=lambda x: (
         x["depth_to_ci_setup"] if x["depth_to_ci_setup"] is not None else float("inf"),

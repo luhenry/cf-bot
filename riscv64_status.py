@@ -13,31 +13,11 @@ same output format) so any existing muscle memory / cron entry referencing
 `python3 riscv64_status.py --depth` keeps working unchanged. See CLAUDE.md.
 """
 import sys
-from typing import Optional
 
 from cf_core import gh_client
 from cf_core import graph as g
 from cf_core import migration_source as ms
 from cf_core import policy
-
-
-def best_pr(prs: list[dict], bot_pr_number: Optional[int], repo_is_v1: bool) -> Optional[dict]:
-    scored = []
-    for pr in prs:
-        s = policy.score_pr(
-            author_login=pr["author"]["login"],
-            title=pr["title"],
-            body=pr.get("body"),
-            changed_files=[f["path"] for f in pr.get("files", [])],
-            bot_pr_number=bot_pr_number or -1,
-            repo_already_uses_v1=repo_is_v1,
-        )
-        if s > 0:
-            scored.append((s, pr["createdAt"], pr))
-    if not scored:
-        return None
-    scored.sort(key=lambda x: (x[0], x[1]), reverse=True)
-    return scored[0][2]
 
 
 def analyze(fetch_prs: bool = True, with_depth: bool = False) -> list[dict]:
@@ -79,7 +59,7 @@ def analyze(fetch_prs: bool = True, with_depth: bool = False) -> list[dict]:
             repo = f"conda-forge/{name}-feedstock"
             prs = gh_client.list_open_prs(repo)
             repo_is_v1 = gh_client.repo_uses_v1_recipe(repo)
-            chosen = best_pr(prs, bot_pr_number, repo_is_v1)
+            chosen = policy.choose_best_pr(prs, bot_pr_number, repo_is_v1)
             if chosen and chosen["author"]["login"] != policy.BOT_AUTHOR:
                 result["best_pr_url"] = chosen["url"]
                 result["best_pr_author"] = chosen["author"]["login"]

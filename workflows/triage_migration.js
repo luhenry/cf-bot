@@ -12,7 +12,11 @@ export const meta = {
 
 // args: { now: "ISO timestamp" }
 const now = args?.now ?? '1970-01-01T00:00:00Z'
-const CF_BOT_DIR = '$HOME/git/conda-forge/cf-bot'
+// Absolute path, not '$HOME/...': agent() bash `cd` calls go through a real shell that expands
+// $HOME, but workflow()'s scriptPath never does, so a literal '$HOME' segment there breaks every
+// nested analyze_feedstock.js call (path-not-found on all pipeline items) -- confirmed relative
+// paths here resolve inconsistently across invocations too, so absolute is the only reliable form.
+const CF_BOT_DIR = '/Users/luhenry/git/conda-forge/cf-bot'
 const ANALYZE_SCRIPT = `${CF_BOT_DIR}/workflows/analyze_feedstock.js`
 
 // ── Phase 1: fetch ready feedstocks + snapshot diff ──────────────────────────────────────────

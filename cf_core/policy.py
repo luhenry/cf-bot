@@ -96,6 +96,33 @@ def score_pr(
     return score
 
 
+def choose_best_pr(
+    prs: list[dict], bot_pr_number: Optional[int], repo_already_uses_v1: bool
+) -> Optional[dict]:
+    """Score every open PR (raw `gh pr list` dicts -- author.login, title, body, files, createdAt)
+    against the bot PR baseline and return the highest scorer (ties broken by newest), or None if
+    nothing scores above zero. Single implementation shared by riscv64_status.py's analyze() and
+    cf_core.cli's `ready-list` -- previously duplicated in riscv64_status.py only, so `ready-list`
+    silently never populated best_pr_url/best_pr_author at all despite CLAUDE.md documenting it as
+    equivalent to riscv64_status.py's full (gh-querying) mode."""
+    scored = []
+    for pr in prs:
+        s = score_pr(
+            author_login=pr["author"]["login"],
+            title=pr["title"],
+            body=pr.get("body"),
+            changed_files=[f["path"] for f in pr.get("files", [])],
+            bot_pr_number=bot_pr_number or -1,
+            repo_already_uses_v1=repo_already_uses_v1,
+        )
+        if s > 0:
+            scored.append((s, pr["createdAt"], pr))
+    if not scored:
+        return None
+    scored.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    return scored[0][2]
+
+
 # ── Priority target ──────────────────────────────────────────────────────────────────────────
 # conda-forge-ci-setup is the #1 priority target: it's the CI tooling infrastructure that
 # (transitively) gates proper linting/rerendering/testing for every other feedstock on riscv64.
