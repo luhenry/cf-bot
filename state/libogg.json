@@ -1,12 +1,13 @@
 {
   "feedstock": "libogg",
   "best_pr_url": "https://github.com/conda-forge/libogg-feedstock/pull/18",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "NUDGE_MERGE",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All CI checks pass including linux_riscv64_, PR is open and not a draft, no prior nudge has been sent, and the linter reports no issues.",
+  "reason": "riscv64 CI is passing (and all other platforms too), the PR is not a draft, it is the same as the bot PR, it is not a v1-bundled migration, and there is no nudge comment in the last 48h.",
   "riscv64_ci_passing": true,
   "num_descendants": 5,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": []
 }

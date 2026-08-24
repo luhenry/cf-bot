@@ -1,12 +1,13 @@
 {
   "feedstock": "nodejs",
-  "best_pr_url": "https://github.com/conda-forge/nodejs-feedstock/pull/491",
-  "last_checked": "2026-08-21T07:30:00Z",
-  "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "best_pr_url": "https://github.com/conda-forge/nodejs-feedstock/pull/498",
+  "last_checked": "2026-08-24T07:38:23Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "The riscv64 CI job fails at dependency resolution with \"No candidates were found for sysroot_linux-riscv64 2.28.*\", indicating the required sysroot package is not yet available in the conda-forge channel. This is a missing infrastructure dependency, not a build bug in the recipe itself.",
-  "riscv64_ci_passing": false,
+  "reason": "Best PR #498 (non-v1, focused riscv64 cross-compile support) has all CI green including riscv64_64_ build, is not a draft, and there is no record of a prior nudge.",
+  "riscv64_ci_passing": true,
   "num_descendants": 4,
-  "depth_to_ci_setup": 1
+  "depth_to_ci_setup": 1,
+  "blocking_dependency_feedstocks": []
 }

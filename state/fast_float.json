@@ -1,12 +1,13 @@
 {
   "feedstock": "fast_float",
   "best_pr_url": "https://github.com/conda-forge/fast_float-feedstock/pull/27",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "NUDGE_MERGE",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All CI checks pass including linux_riscv64_, PR is open and not a draft, linter is clean, and no prior nudge exists for this feedstock.",
+  "reason": "riscv64 CI is passing, PR is not a draft, and it is the bot own unmodified PR with no prior nudge recorded.",
   "riscv64_ci_passing": true,
   "num_descendants": 2,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": []
 }
