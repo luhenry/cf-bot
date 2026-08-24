@@ -1,12 +1,15 @@
 {
   "feedstock": "libevent",
   "best_pr_url": "https://github.com/conda-forge/libevent-feedstock/pull/27",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "The riscv64 CI fails solely because `python` is not yet available for linux-riscv64. The solver cannot satisfy the `python` dependency for that platform. Maintainer h-vetinari confirmed this PR is blocked on python-feedstock PR #896.",
+  "reason": "riscv64 CI fails solely due to a missing python package for linux-riscv64 (solver error: python does not exist for that platform); all other platforms pass.",
   "riscv64_ci_passing": false,
   "num_descendants": 5,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": [
+    "python"
+  ]
 }

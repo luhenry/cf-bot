@@ -1,12 +1,13 @@
 {
   "feedstock": "pugixml",
   "best_pr_url": "https://github.com/conda-forge/pugixml-feedstock/pull/31",
-  "last_checked": "2026-08-21T07:30:00Z",
-  "last_action": "WAIT_UNRELATED_FAILURE",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
+  "last_action": "NUDGE_MERGE",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "The riscv64 CI passes successfully. The only failing check is the conda-forge-linter, which flags a pre-existing recipe issue (package.version interpreted as float, needs quoting). This is unrelated to the riscv64 migration itself.",
+  "reason": "riscv64 CI is passing and the PR is not a draft; the only failing check is the conda-forge-linter flagging an unrelated recipe style nit (unquoted version), which is not a riscv64-specific or build-blocking issue.",
   "riscv64_ci_passing": true,
   "num_descendants": 2,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": []
 }

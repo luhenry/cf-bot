@@ -1,0 +1,11 @@
+{
+  "discovered_from": [
+    "mpc"
+  ],
+  "first_seen": "2026-08-24T07:38:23Z",
+  "last_checked": "2026-08-24T07:38:23Z",
+  "riscv64_pr_url": "https://github.com/conda-forge/mpfr-feedstock/pull/53",
+  "riscv64_pr_status": "merged",
+  "last_action": "DONE",
+  "name": "mpfr"
+}

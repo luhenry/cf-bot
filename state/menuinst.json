@@ -1,12 +1,15 @@
 {
   "feedstock": "menuinst",
   "best_pr_url": "https://github.com/conda-forge/menuinst-feedstock/pull/65",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All 5 linux-riscv64 CI jobs fail at dependency resolution with \"No candidates were found for cross-python_linux-riscv64 *\". This is a solver-level missing dep, not a code bug. All other platforms (linux_64, linux_aarch64, linux_ppc64le, win_64, win_arm64, osx_64, osx_arm64) pass. No prior bot state exists.",
+  "reason": "riscv64 CI fails solely due to a missing conda-forge package: cross-python has no riscv64 build yet.",
   "riscv64_ci_passing": false,
   "num_descendants": 3,
-  "depth_to_ci_setup": 1
+  "depth_to_ci_setup": 1,
+  "blocking_dependency_feedstocks": [
+    "cross-python"
+  ]
 }

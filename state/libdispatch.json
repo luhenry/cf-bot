@@ -1,12 +1,19 @@
 {
   "feedstock": "libdispatch",
   "best_pr_url": "https://github.com/conda-forge/libdispatch-feedstock/pull/19",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "CI fails because clang_linux-riscv64=21 and clangxx_linux-riscv64=21 do not yet exist in the conda-forge channel. This is a missing upstream dependency (compiler packages), not a build bug in the feedstock. The maintainer comment from 2026-08-20 confirms the blocking dependency chain: ctng-compilers -> compiler-rt -> llvmdev -> libxml2 must land first. The linux_ppc64le_ failure is also related to the same missing cross-compiler packages.",
+  "reason": "riscv64 CI fails solely due to a missing conda-forge package dependency (clang_linux-riscv64), not a code/build bug or an upstream gap.",
   "riscv64_ci_passing": false,
-  "num_descendants": 144,
-  "depth_to_ci_setup": 4
+  "num_descendants": 143,
+  "depth_to_ci_setup": 4,
+  "blocking_dependency_feedstocks": [
+    "ctng-compiler-activation",
+    "compiler-rt",
+    "llvmdev",
+    "libxml2",
+    "clang"
+  ]
 }

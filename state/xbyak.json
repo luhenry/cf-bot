@@ -1,12 +1,13 @@
 {
   "feedstock": "xbyak",
   "best_pr_url": "https://github.com/conda-forge/xbyak-feedstock/pull/72",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "NUDGE_MERGE",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All CI checks pass including linux_riscv64_, PR is not a draft, linter is clean, and no prior nudge exists for this feedstock.",
+  "reason": "riscv64 CI is passing (linux_riscv64_ SUCCESS), PR is not a draft, not a v1 migration, no existing riscv64 support in conda-forge.yml, and this is the sole/best PR (bot PR == best PR). No prior nudge recorded, so a nudge is due.",
   "riscv64_ci_passing": true,
   "num_descendants": 2,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": []
 }

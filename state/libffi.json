@@ -1,12 +1,15 @@
 {
   "feedstock": "libffi",
   "best_pr_url": "https://github.com/conda-forge/libffi-feedstock/pull/63",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "NUDGE_MERGE",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All CI checks are passing, including linux_riscv64_. No nudge has been sent previously (no prior state). The PR is open, not draft, and h-vetinari confirmed on 2026-08-20 that the PR is green and asked maintainers to review.",
+  "reason": "riscv64 CI is passing, the PR is not a draft, and it is the same PR as the bot PR (#63) with a clean migration tracker status.",
   "riscv64_ci_passing": true,
-  "num_descendants": 148,
-  "depth_to_ci_setup": 2
+  "num_descendants": 145,
+  "depth_to_ci_setup": 2,
+  "blocking_dependency_feedstocks": [
+    "rattler-build"
+  ]
 }

@@ -4,7 +4,7 @@
     "policy: #1 priority target"
   ],
   "first_seen": "2026-08-21T12:00:00Z",
-  "last_checked": "2026-08-23T14:51:42Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "riscv64_pr_url": null,
   "riscv64_pr_status": "no riscv64 PR open yet (checked conda-forge-ci-setup-feedstock open PRs, none mention riscv64) - migration has not started",
   "last_action": "WAIT_NOT_STARTED",

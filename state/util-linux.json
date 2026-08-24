@@ -1,12 +1,16 @@
 {
   "feedstock": "util-linux",
   "best_pr_url": "https://github.com/conda-forge/util-linux-feedstock/pull/58",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All riscv64 CI jobs fail with a solver error: python=3.13[build=*_cp313] does not exist for linux-riscv64. This is an upstream missing dependency, not a code bug. The PR author has explicitly noted upstream dependency PRs on cross-python-feedstock and python-feedstock that must land first. Non-riscv64 failures (linux_64 python3.11/3.13, linux_aarch64 python3.11, macOS python3.10/3.11/3.13) are consistent with the same missing python build artifacts across platforms.",
+  "reason": "riscv64 CI fails with a solver error because python=3.x *_cpython does not yet exist for linux-riscv64 in the channel; this is a conda-forge packaging gap (python/cross-python feedstocks not yet riscv64-enabled), not a bug in this PR.",
   "riscv64_ci_passing": false,
   "num_descendants": 53,
-  "depth_to_ci_setup": 8
+  "depth_to_ci_setup": 8,
+  "blocking_dependency_feedstocks": [
+    "cross-python",
+    "python"
+  ]
 }

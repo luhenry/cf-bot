@@ -1,12 +1,15 @@
 {
   "feedstock": "libwebp",
   "best_pr_url": "https://github.com/conda-forge/libwebp-feedstock/pull/65",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "The riscv64 CI fails because libtiff=4.7 is not available for linux-riscv64 in the conda-forge channel. This is a missing upstream dependency, not a bug in this feedstock. The win_arm64 failure is unrelated to the riscv64 migration.",
+  "reason": "riscv64 CI fails purely due to a solver error: libtiff=4.7 does not exist for linux-riscv64 (missing riscv64 build of a dependency in conda-forge), not a code/build bug in libwebp itself.",
   "riscv64_ci_passing": false,
   "num_descendants": 3,
-  "depth_to_ci_setup": 2
+  "depth_to_ci_setup": 2,
+  "blocking_dependency_feedstocks": [
+    "libtiff"
+  ]
 }

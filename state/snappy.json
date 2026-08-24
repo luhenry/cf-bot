@@ -1,12 +1,13 @@
 {
   "feedstock": "snappy",
   "best_pr_url": "https://github.com/conda-forge/snappy-feedstock/pull/42",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "NEEDS_FIX",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All CI platforms (including linux_riscv64_) fail due to a patch application error. Patch 0004-cmake-add-option-to-enable-disable-RTTI.patch cannot be applied because hunk #2 cannot find the expected context in the target CMakeLists.txt. This is a recipe-level build bug affecting every platform equally, not a missing dependency or an unrelated non-riscv64 issue.",
+  "reason": "CI fails on all platforms (including riscv64 and linux_64) with an identical build-bug root cause: patch application error in patches/0004-cmake-add-option-to-enable-disable-RTTI.patch (hunk #2 context not found), not a riscv64-specific or missing-dependency issue.",
   "riscv64_ci_passing": false,
   "num_descendants": 2,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": []
 }

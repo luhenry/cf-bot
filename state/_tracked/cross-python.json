@@ -1,0 +1,31 @@
+{
+  "discovered_from": [
+    "psutil",
+    "pydantic-core",
+    "menuinst",
+    "msgpack-python",
+    "ruamel.yaml.clib",
+    "astroid",
+    "debugpy",
+    "greenlet",
+    "lazy-object-proxy",
+    "py-rattler-build",
+    "rpds-py",
+    "tornado",
+    "ujson",
+    "wrapt",
+    "ast-serialize",
+    "python-librt",
+    "uv-build",
+    "dulwich",
+    "py-rattler",
+    "pycosat",
+    "util-linux"
+  ],
+  "first_seen": "2026-08-24T07:38:23Z",
+  "last_checked": "2026-08-24T07:38:23Z",
+  "riscv64_pr_url": "https://github.com/conda-forge/cross-python-feedstock/pull/107",
+  "riscv64_pr_status": "draft, blocked on python-feedstock#896",
+  "last_action": "WAIT_NOT_STARTED",
+  "name": "cross-python"
+}

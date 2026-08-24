@@ -1,0 +1,11 @@
+{
+  "discovered_from": [
+    "dovi_tool"
+  ],
+  "first_seen": "2026-08-24T07:38:23Z",
+  "last_checked": "2026-08-24T07:38:23Z",
+  "riscv64_pr_url": null,
+  "riscv64_pr_status": "no PR yet",
+  "last_action": "NEEDS_MINIMAL_PR",
+  "name": "libdovi"
+}

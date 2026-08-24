@@ -1,12 +1,15 @@
 {
   "feedstock": "pycosat",
   "best_pr_url": "https://github.com/conda-forge/pycosat-feedstock/pull/38",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All 5 linux-riscv64 CI jobs fail with a solver error: `cross-python_linux-riscv64` does not exist in the channel. This is an infrastructure/ecosystem gap, not a code bug. All other platforms (linux-64, linux-aarch64, linux-ppc64le, win-64, win-arm64, osx-64, osx-arm64) pass cleanly.",
+  "reason": "All 5 linux_riscv64 CI jobs fail with the same solver error: cross-python_linux-riscv64 does not exist. This is a conda-forge packaging gap (cross-python feedstock hasn't published a riscv64 build) that must be fixed upstream in the cross-python feedstock before this PR's riscv64 jobs can pass; all other platforms (linux_64, linux_aarch64, linux_ppc64le, win_64, win_arm64, osx) pass cleanly.",
   "riscv64_ci_passing": false,
   "num_descendants": 3,
-  "depth_to_ci_setup": 2
+  "depth_to_ci_setup": 2,
+  "blocking_dependency_feedstocks": [
+    "cross-python"
+  ]
 }

@@ -1,12 +1,15 @@
 {
   "feedstock": "astroid",
   "best_pr_url": "https://github.com/conda-forge/astroid-feedstock/pull/170",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All 6 linux-riscv64 CI jobs fail with a solver error: `cross-python_linux-riscv64` does not exist in the channel. This is a missing infrastructure dependency, not a code or build bug in the feedstock itself. All other platforms (linux-64, linux-aarch64, linux-ppc64le, osx-64, osx-arm64, win-64) pass cleanly.",
+  "reason": "riscv64 CI fails only due to a solver error caused by a missing conda-forge package (cross-python_linux-riscv64), not a code/build bug in astroid itself.",
   "riscv64_ci_passing": false,
   "num_descendants": 1,
-  "depth_to_ci_setup": 1
+  "depth_to_ci_setup": 1,
+  "blocking_dependency_feedstocks": [
+    "cross-python"
+  ]
 }

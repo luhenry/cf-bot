@@ -1,12 +1,13 @@
 {
   "feedstock": "libtool",
   "best_pr_url": "https://github.com/conda-forge/libtool-feedstock/pull/37",
-  "last_checked": "2026-08-21T07:30:00Z",
-  "last_action": "ESCALATE",
-  "last_action_at": "2026-08-21T07:30:00Z",
-  "confidence": "medium",
-  "reason": "riscv64 CI is passing and the only failures are transient network errors on aarch64 and osx_64 when fetching the source tarball from ftpmirror.gnu.org. Our bot already posted a comment (2026-08-20T19:57:50Z) explaining the failure and asking the libtool maintainers whether switching to an alternative mirror is acceptable. That open maintainer question warrants human judgment before nudging a merge.",
+  "last_checked": "2026-08-24T07:38:23Z",
+  "last_action": "WAIT_UNRELATED_FAILURE",
+  "last_action_at": "2026-08-24T07:38:23Z",
+  "confidence": "high",
+  "reason": "riscv64 CI passes on both runs; the only failures (linux_aarch64_ and osx_64_) are unrelated to riscv64, caused by transient network errors downloading libtool-2.5.4.tar.gz from ftpmirror.gnu.org (connection refused / 502 / timeout), not a riscv64 code or dependency issue.",
   "riscv64_ci_passing": true,
   "num_descendants": 2,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": []
 }

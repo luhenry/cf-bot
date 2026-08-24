@@ -1,12 +1,13 @@
 {
   "feedstock": "x265",
   "best_pr_url": "https://github.com/conda-forge/x265-feedstock/pull/7",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "NUDGE_MERGE",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All CI checks are passing including riscv64, the PR is not a draft, the linter reports the recipe is in excellent condition, and there is no prior nudge on record for this feedstock.",
+  "reason": "Best PR #7 is a non-v1, riscv64-focused fix with all CI green (including riscv64) and is not a draft; no prior nudge is recorded, so a nudge is due.",
   "riscv64_ci_passing": true,
   "num_descendants": 1,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": []
 }

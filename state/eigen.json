@@ -1,12 +1,15 @@
 {
   "feedstock": "eigen",
-  "best_pr_url": "https://github.com/conda-forge/eigen-feedstock/pull/59",
-  "last_checked": "2026-08-21T07:30:00Z",
-  "last_action": "NEEDS_FIX",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "best_pr_url": "https://github.com/conda-forge/eigen-feedstock/pull/60",
+  "last_checked": "2026-08-24T07:38:23Z",
+  "last_action": "WAIT_MISSING_DEP",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "The riscv64 CI job fails at the test phase because the test binary cannot locate libstdc++.so.6 at runtime (exit status 127). This is a packaging or environment bug specific to the riscv64 build, not a missing solver dependency.",
+  "reason": "riscv64 CI fails only due to a solver error: cmake-package-check's test dependency requires python >=3.9, which has no riscv64 build yet. All other platforms (linux_64, aarch64, ppc64le, osx_64, osx_arm64, win_64) pass on both PR #59 and #60.",
   "riscv64_ci_passing": false,
   "num_descendants": 3,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": [
+    "python"
+  ]
 }

@@ -1,12 +1,15 @@
 {
   "feedstock": "python-librt",
   "best_pr_url": "https://github.com/conda-forge/python-librt-feedstock/pull/25",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All 6 linux_riscv64 CI jobs fail with a dependency solver error: `cross-python_linux-riscv64` has no candidates. This is an ecosystem-level missing dependency (the riscv64 cross-Python toolchain package is not yet available in conda-forge), not a feedstock code or recipe bug. All other platforms (linux_64, linux_aarch64, linux_ppc64le, osx_64, osx_arm64, win_64) pass cleanly.",
+  "reason": "riscv64 CI fails solely due to a missing conda-forge package: the solver cannot find cross-python for linux-riscv64.",
   "riscv64_ci_passing": false,
   "num_descendants": 6,
-  "depth_to_ci_setup": 2
+  "depth_to_ci_setup": 2,
+  "blocking_dependency_feedstocks": [
+    "cross-python"
+  ]
 }

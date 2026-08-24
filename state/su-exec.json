@@ -1,12 +1,13 @@
 {
   "feedstock": "su-exec",
   "best_pr_url": "https://github.com/conda-forge/su-exec-feedstock/pull/11",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "NUDGE_MERGE",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All CI checks pass including linux_riscv64_, the PR is open and not a draft, and there is no prior bot nudge on record (state file absent).",
+  "reason": "riscv64 CI is passing, PR is not a draft, it's the same as best_pr (non-v1), and no recent bot nudge exists on the PR (last comment was a maintainer rerender request 4 days ago).",
   "riscv64_ci_passing": true,
   "num_descendants": 0,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": []
 }

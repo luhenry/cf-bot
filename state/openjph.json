@@ -1,12 +1,15 @@
 {
   "feedstock": "openjph",
   "best_pr_url": "https://github.com/conda-forge/openjph-feedstock/pull/39",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "The riscv64 CI fails solely due to a missing dependency: libtiff 4.7.* has no riscv64 candidate in the solver. All other platforms pass. A maintainer comment also notes this PR depends on a pending libffi-feedstock PR #63, suggesting upstream riscv64 packages are still landing.",
+  "reason": "riscv64 CI fails solely due to a solver error: no candidates for libtiff 4.7 on linux-riscv64, a missing conda-forge packaging dependency.",
   "riscv64_ci_passing": false,
   "num_descendants": 3,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": [
+    "libtiff"
+  ]
 }

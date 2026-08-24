@@ -1,12 +1,15 @@
 {
   "feedstock": "wrapt",
   "best_pr_url": "https://github.com/conda-forge/wrapt-feedstock/pull/61",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All linux_riscv64 CI jobs fail with a solver error: `cross-python_linux-riscv64` does not exist in the channel. This is an infrastructure/dependency availability issue, not a code or build bug in wrapt itself. The package cannot be built until that cross-compilation dependency is published to conda-forge.",
+  "reason": "All linux_riscv64 CI jobs fail with a solver error: MatchSpec(\"cross-python_linux-riscv64\") does not exist. This is a missing conda-forge packaging dependency (cross-python feedstock hasn't published a riscv64 build), not a bug in wrapt's recipe or build.",
   "riscv64_ci_passing": false,
   "num_descendants": 1,
-  "depth_to_ci_setup": 1
+  "depth_to_ci_setup": 1,
+  "blocking_dependency_feedstocks": [
+    "cross-python"
+  ]
 }

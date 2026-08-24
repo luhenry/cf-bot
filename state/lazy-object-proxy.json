@@ -1,7 +1,7 @@
 {
   "feedstock": "lazy-object-proxy",
   "best_pr_url": "https://github.com/conda-forge/lazy-object-proxy-feedstock/pull/49",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
   "last_action_at": "2026-08-21T07:30:00Z",
   "confidence": "high",

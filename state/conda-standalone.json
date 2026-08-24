@@ -1,12 +1,15 @@
 {
   "feedstock": "conda-standalone",
   "best_pr_url": "https://github.com/conda-forge/conda-standalone-feedstock/pull/98",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "The riscv64 CI failure is a solver error: \"No candidates were found for conda 26.5.2.*\". This is a missing dependency on the riscv64 platform, not a code or build bug in the feedstock. The other platform failures (linux_64, aarch64, ppc64le, osx) are caused by a different issue (PYI security validation test failure in test_conda_run), which is unrelated to the riscv64 migration changes.",
+  "reason": "riscv64 CI fails purely on a solver error: the test environment cannot find `conda 26.5.2.*` for linux-riscv64 (conda package not yet built for riscv64 on conda-forge). Other platforms fail too, but for a distinct, unrelated reason (a PyInstaller/conda-run security-check test regression), not something blocking riscv64 specifically.",
   "riscv64_ci_passing": false,
   "num_descendants": 0,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": [
+    "conda"
+  ]
 }

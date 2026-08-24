@@ -1,12 +1,15 @@
 {
   "feedstock": "libprotobuf",
   "best_pr_url": "https://github.com/conda-forge/libprotobuf-feedstock/pull/305",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "The linux_riscv64_ CI fails because `grep` is not yet available for the riscv64 platform. The solver cannot satisfy the `grep` dependency. A maintainer (h-vetinari) has confirmed this PR depends on grep-feedstock PR #19 which is still pending.",
-  "riscv64_ci_passing": false,
+  "reason": "Maintainer h-vetinari explicitly stated this PR needs grep-feedstock PR #19 to land first, and both the CI-log analysis and comment analysis independently flag \"grep\" as a blocking_dependency_feedstock \u2014 a conda-forge packaging gap, not an upstream release gap.",
+  "riscv64_ci_passing": true,
   "num_descendants": 2,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": [
+    "grep"
+  ]
 }

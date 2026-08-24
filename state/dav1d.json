@@ -1,12 +1,13 @@
 {
   "feedstock": "dav1d",
   "best_pr_url": "https://github.com/conda-forge/dav1d-feedstock/pull/39",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "NUDGE_MERGE",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All CI checks pass including linux_riscv64_, PR is not a draft, no prior nudge on record, and the only comment is a non-blocking linter suggestion about adding tests.",
+  "reason": "riscv64 CI (and all other platforms) pass on PR #39, which is both the bot PR and the best PR; PR is not a draft; recipe already uses v1 format so no v1-migration concern; no evidence of a prior nudge in the last 48h.",
   "riscv64_ci_passing": true,
   "num_descendants": 1,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": []
 }

@@ -1,12 +1,15 @@
 {
   "feedstock": "uv-build",
   "best_pr_url": "https://github.com/conda-forge/uv-build-feedstock/pull/131",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "The linux_riscv64_ CI job fails solely because the solver cannot find cross-python_linux-riscv64. This is a missing infrastructure dependency, not a feedstock bug. All other platforms (linux_64, linux_aarch64, linux_ppc64le, win_64, osx_64, osx_arm64) pass. No action is needed on the PR itself; the fix must come from the cross-python riscv64 package being available in the conda-forge channel.",
+  "reason": "riscv64 CI fails solely due to a solver error: no candidates found for cross-python_linux-riscv64, a missing conda-forge packaging dependency, not a code/build issue in uv-build.",
   "riscv64_ci_passing": false,
   "num_descendants": 5,
-  "depth_to_ci_setup": 2
+  "depth_to_ci_setup": 2,
+  "blocking_dependency_feedstocks": [
+    "cross-python"
+  ]
 }

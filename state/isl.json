@@ -1,12 +1,15 @@
 {
   "feedstock": "isl",
   "best_pr_url": "https://github.com/conda-forge/isl-feedstock/pull/35",
-  "last_checked": "2026-08-21T07:30:00Z",
-  "last_action": "NUDGE_MERGE",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
+  "last_action": "WAIT_UNRELATED_FAILURE",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All riscv64 CI checks pass. The only failing check (win_64_) is an unrelated Windows build issue (configure exit 77 / conda_build.bat failure) that predates this PR's changes. Linting is clean. No prior nudge has been posted.",
+  "reason": "riscv64 CI is fully green (both linux_riscv64_val_int_typegmp and linux_riscv64_val_int_typeimath-32 jobs SUCCESS); the only failing check is win_64_, which is unrelated to the riscv64 migration.",
   "riscv64_ci_passing": true,
-  "num_descendants": 144,
-  "depth_to_ci_setup": 3
+  "num_descendants": 143,
+  "depth_to_ci_setup": 3,
+  "blocking_dependency_feedstocks": [
+    "gmp"
+  ]
 }

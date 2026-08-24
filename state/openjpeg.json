@@ -1,12 +1,15 @@
 {
   "feedstock": "openjpeg",
   "best_pr_url": "https://github.com/conda-forge/openjpeg-feedstock/pull/58",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All CI failures trace back to a single missing riscv64 dependency: libtiff=4.7 is not yet available for linux-riscv64. The solver error propagates across all platforms because the dependency cannot be resolved. This is a classic upstream-dep-not-yet-built situation.",
+  "reason": "riscv64 CI fails solely due to a solver error for a missing riscv64 build of libtiff=4.7, a conda-forge packaging gap unrelated to openjpeg recipe.",
   "riscv64_ci_passing": false,
   "num_descendants": 2,
-  "depth_to_ci_setup": 2
+  "depth_to_ci_setup": 2,
+  "blocking_dependency_feedstocks": [
+    "libtiff"
+  ]
 }

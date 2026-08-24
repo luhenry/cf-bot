@@ -1,12 +1,15 @@
 {
   "feedstock": "psutil",
   "best_pr_url": "https://github.com/conda-forge/psutil-feedstock/pull/99",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All six linux-riscv64 CI jobs fail with a conda solver error: \"No candidates were found for cross-python_linux-riscv64 *\". This is a missing dependency in the conda-forge channel, not a build or code issue in the feedstock itself. All other platforms (linux-64, linux-aarch64, linux-ppc64le, osx-64, osx-arm64, win-64) pass cleanly.",
+  "reason": "All 6 riscv64 CI jobs fail identically with a solver error: no candidates found for cross-python_linux-riscv64. This is a missing conda-forge packaging dependency (cross-python-feedstock needs to build/publish a riscv64 variant), not a code/build bug in psutil itself. All other platforms (linux_64, aarch64, ppc64le, osx, win) pass.",
   "riscv64_ci_passing": false,
   "num_descendants": 6,
-  "depth_to_ci_setup": 1
+  "depth_to_ci_setup": 1,
+  "blocking_dependency_feedstocks": [
+    "cross-python"
+  ]
 }

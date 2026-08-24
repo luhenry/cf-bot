@@ -1,12 +1,13 @@
 {
   "feedstock": "intel-gmmlib",
   "best_pr_url": "https://github.com/conda-forge/intel-gmmlib-feedstock/pull/57",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "NEEDS_FIX",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "The riscv64 CI build fails due to CMake being unable to find the Threads library (pthread). The error \"CMake Error: Could NOT find Threads (missing: Threads_FOUND) — CMAKE_HAVE_LIBC_PTHREAD test Failed, -pthread not accepted, pthread_create not found in pthreads or pthread\" indicates a build configuration issue specific to the riscv64 toolchain. This is a genuine build bug requiring a recipe or patch fix, not a missing conda dependency.",
+  "reason": "riscv64 CI fails with a CMake configure error: find_package(Threads) cannot locate pthread on riscv64, aborting the CMake configure step for GmmLib. This is a build/recipe-level bug, not a missing conda-forge dependency (missing_dep_name is null) and not an upstream release gap.",
   "riscv64_ci_passing": false,
   "num_descendants": 3,
-  "depth_to_ci_setup": null
+  "depth_to_ci_setup": null,
+  "blocking_dependency_feedstocks": []
 }

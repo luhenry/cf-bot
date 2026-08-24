@@ -1,12 +1,15 @@
 {
   "feedstock": "dulwich",
   "best_pr_url": "https://github.com/conda-forge/dulwich-feedstock/pull/130",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All riscv64 CI jobs fail with a solver error indicating cross-python_linux-riscv64 is not yet available in the conda-forge channel. Maintainer xylar explicitly confirmed a dependency on an upstream cross-python-feedstock PR that must merge first. All other platforms pass.",
+  "reason": "riscv64 CI fails solely due to a missing conda-forge package (cross-python) for linux-riscv64; all other platforms pass.",
   "riscv64_ci_passing": false,
   "num_descendants": 3,
-  "depth_to_ci_setup": 2
+  "depth_to_ci_setup": 2,
+  "blocking_dependency_feedstocks": [
+    "cross-python"
+  ]
 }

@@ -1,12 +1,16 @@
 {
   "feedstock": "mpc",
   "best_pr_url": "https://github.com/conda-forge/mpc-feedstock/pull/32",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "NUDGE_MERGE",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All CI checks pass including linux_riscv64_, PR is not a draft, linter is clean, and no prior NUDGE_MERGE action exists in the state file.",
+  "reason": "All CI checks pass including linux_riscv64_, PR is open and not draft, migration tracker is clean, and there is no prior nudge from our bot in the last 48h (bot_pr_comments empty, no is_our_bot comments in best_pr_comments).",
   "riscv64_ci_passing": true,
-  "num_descendants": 144,
-  "depth_to_ci_setup": 3
+  "num_descendants": 143,
+  "depth_to_ci_setup": 3,
+  "blocking_dependency_feedstocks": [
+    "gmp",
+    "mpfr"
+  ]
 }

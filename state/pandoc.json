@@ -1,13 +1,13 @@
 {
   "feedstock": "pandoc",
   "best_pr_url": "https://github.com/conda-forge/pandoc-feedstock/pull/171",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_UPSTREAM",
-  "last_action_at": "2026-08-21T00:00:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "Confirmed via conda-forge.yml on main: riscv64 not yet merged. Confirmed via direct diff of PR#171 vs main: the recipe's `# [linux and not aarch64]` source-URL selector for the linux-amd64 binary also matches riscv64, so the PR would repackage an x86-64 binary under the riscv64 label (wolfv's correctness concern is real). Upstream context: jgm/pandoc#10205 (closed, linked PR #10197 'linux/make_artifacts.sh: add riscv64 support' merged) means pandoc's release-build tooling can now produce riscv64 binaries, but none of the 5 most recent releases (3.10, 3.9.0.2, 3.9.0.1, 3.9, 3.8.3) actually ship one yet. PR#172 (wolfv, draft, v1 recipe migration) deliberately excludes riscv64 for the same reason -- consistent with our v1-bundling-avoidance policy, no separate action needed there. Direction is decided (wait for a real upstream riscv64 release, do not merge #171 as-is); nothing actionable in the feedstock until then. Re-check jgm/pandoc/releases periodically.",
+  "reason": "riscv64 CI is green, but a core maintainer (wolfv) correctly flagged that the shipped package would be mislabeled: pandoc has no upstream riscv64 release binary, and conda-forge has no linux-riscv64 GHC to build pandoc from source, so this is a decided-but-unshippable upstream gap, not an ambiguous dispute.",
   "riscv64_ci_passing": true,
-  "num_descendants": 3,
+  "num_descendants": 1,
   "depth_to_ci_setup": 1,
   "upstream_tracking": {
     "issue": "https://github.com/jgm/pandoc/issues/10205",
@@ -15,5 +15,6 @@
     "build_tooling_pr": "https://github.com/jgm/pandoc/pull/10197 (merged)",
     "last_release_checked": "3.10",
     "riscv64_binary_shipped": false
-  }
+  },
+  "blocking_dependency_feedstocks": []
 }

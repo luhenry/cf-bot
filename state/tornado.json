@@ -1,12 +1,15 @@
 {
   "feedstock": "tornado",
   "best_pr_url": "https://github.com/conda-forge/tornado-feedstock/pull/83",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All riscv64 CI jobs fail with a solver error: `cross-python_linux-riscv64` does not exist in the channel. This is an infrastructure/missing-dep issue, not a tornado build bug. All other platforms pass cleanly.",
+  "reason": "All 6 linux_riscv64 CI jobs fail identically with a conda solver error for cross-python_linux-riscv64, which does not exist yet as a package; every other platform (linux_64, linux_aarch64, linux_ppc64le, osx_64, osx_arm64, win_64) passes. This is a conda-forge packaging gap (missing cross-compilation support package), not a code bug in tornado, so the PR cannot merge green until cross-python publishes a riscv64 build.",
   "riscv64_ci_passing": false,
   "num_descendants": 1,
-  "depth_to_ci_setup": 1
+  "depth_to_ci_setup": 1,
+  "blocking_dependency_feedstocks": [
+    "cross-python"
+  ]
 }

@@ -1,12 +1,15 @@
 {
   "feedstock": "ruamel",
   "best_pr_url": "https://github.com/conda-forge/ruamel-feedstock/pull/18",
-  "last_checked": "2026-08-21T07:30:00Z",
+  "last_checked": "2026-08-24T07:38:23Z",
   "last_action": "WAIT_MISSING_DEP",
-  "last_action_at": "2026-08-21T07:30:00Z",
+  "last_action_at": "2026-08-24T07:38:23Z",
   "confidence": "high",
-  "reason": "All six linux_riscv64 CI jobs fail with a conda solver error stating that python for linux-riscv64 does not exist in the channel. This is not a code or build bug in the ruamel feedstock itself — it is a missing upstream dependency (python packages for riscv64) that must be resolved in the conda-forge ecosystem before this PR can pass.",
+  "reason": "riscv64 CI fails solely due to a solver error: python=3.10 (and other python versions) built with *_cpython do not yet exist for linux-riscv64, so this is a missing upstream conda-forge package (python) for riscv64, not a code/build bug in ruamel itself.",
   "riscv64_ci_passing": false,
   "num_descendants": 3,
-  "depth_to_ci_setup": 1
+  "depth_to_ci_setup": 1,
+  "blocking_dependency_feedstocks": [
+    "python"
+  ]
 }
